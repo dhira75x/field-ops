@@ -1,58 +1,95 @@
-<template>
+<script setup>
+import { onMounted, ref } from "vue";
+import { useUserStore } from "@/stores/userStore";
+
+const userStore = useUserStore();
+
+const expandWorkplaceTab = ref(false);
+const expandObligationTab = ref(false);
+const expandBPD = ref(false);
+const isAdmin = ref(false);
+
+onMounted(() => {
+  userStore.checkRole();
+  isAdmin.value = userStore.isAdmin;
+});
+</script>
+
+<template lang="">
   <aside class="fixed top-0 left-0 h-screen w-[260px] bg-[#0F151F] px-4 py-12">
-    <img src="@/assets/legend_rev.svg" alt="Home" />
+    <img src="../assets/suburban-logo-inverted.svg" alt="Home" />
     <div class="mt-5 text-center text-gray-500">
-      <!-- {{ userStore.$state.user ? userStore.$state.user.role.toUpperCase() : null }} -->
+      {{
+        userStore.$state.user ? userStore.$state.user.role.toUpperCase() : null
+      }}
     </div>
     <ul class="font-sm mt-10 text-[#B3B3B3] h-full overflow-y-scroll">
       <li class="cursor-pointer p-4">
         <div
           class="flex items-center justify-between"
-          @click="expandWorkplaceTab = !expandWorkplaceTab"
-        >
+          @click="expandWorkplaceTab = !expandWorkplaceTab">
+        
           <div class="flex items-center">
+            <img src="../assets/dashboard.svg" alt="dashboard" />
             <span class="ml-3">My Workplace</span>
           </div>
+          <img
+            src="@/assets/chevron.svg"
+            :class="{ 'rotate-180': expandWorkplaceTab === false }"
+          />
         </div>
-        <img src="../assets/Icon Button.svg" />
         <ul v-if="expandWorkplaceTab" class="mt-4 text-start">
-          <li class="rounded-lg bg-opacity-10 p-3" :class="{ 'bg-white': $route.name === 'home' }">
-            <router-link :to="{ name: 'home' }">Schedules & Reports</router-link>
+          <li
+            class="rounded-lg bg-opacity-10 p-3"
+            :class="{ 'bg-white': $route.name === 'home' }"
+          >
+            <router-link :to="{ path: '/' }"
+              >Schedules & Reports</router-link
+            >
           </li>
           <li
             class="rounded-lg bg-opacity-10 p-3"
-            :class="{ 'bg-white': $route.name === 'collaboration' }"
+            :class="{ 'bg-white': $route.name === 'collaboration' }"  
           >
-            <router-link :to="{ name: 'collaboration' }">Collaboration</router-link>
+            <router-link :to="{ path: '/' }"
+              >Collaboration</router-link
+            >
           </li>
 
           <li
             class="rounded-lg bg-opacity-10 p-3"
             :class="{ 'bg-white': $route.name === 'approvals' }"
           >
-            <router-link :to="{ name: 'approvals' }">Approvals</router-link>
+            <router-link :to="{ path: '/' }">Approvals</router-link>
           </li>
 
           <li
             class="rounded-lg bg-opacity-10 p-3"
             :class="{
-              'bg-white': $route.name === 'requests' || $route.name === 'expenditureRequest'
+              'bg-white':
+                $route.name === 'requests' ||
+                $route.name === 'expenditureRequest',
             }"
           >
-            <router-link :to="{ name: 'requests' }">Requests</router-link>
+            <router-link :to="{ path: '/' }">Requests</router-link>
           </li>
 
           <li
             class="rounded-lg bg-opacity-10 p-3"
             :class="{ 'bg-white': $route.name === 'closeout-report' }"
           >
-            <router-link :to="{ name: 'closeout-report' }">Close Out Reports</router-link>
+            <router-link :to="{ path: '/' }"
+              >Close Out Reports</router-link
+            >
           </li>
         </ul>
       </li>
-
-      <li class="cursor-pointer p-4">
-        <div class="flex items-center justify-between" @click="expandBPD = !expandBPD">
+      
+      <li v-if="userStore.userHasRole('BPU')" class="cursor-pointer p-4">
+        <div
+          class="flex items-center justify-between"
+          @click="expandBPD = !expandBPD"
+        >
           <div class="flex items-center">
             <svg
               width="20"
@@ -86,110 +123,148 @@
 
             <span class="ml-3">BPAD</span>
           </div>
-          <img src="../assets/Icon Button.svg" />
+          <img
+            src="../assets/chevron.svg"
+            :class="{ 'rotate-180': expandBPD === false }"
+          />
         </div>
         <ul v-if="expandBPD" class="mt-4 text-start">
-          <li class="rounded-lg bg-opacity-10 p-3" :class="{ 'bg-white': $route.name === 'BPD' }">
-            <router-link :to="{ name: 'BPD' }">Analysis & Visualization</router-link>
+          <li
+            class="rounded-lg bg-opacity-10 p-3"
+            :class="{ 'bg-white': $route.name === 'BPD' }"
+          >
+            <router-link :to="{ path: '/' }"
+              >Analysis & Visualization</router-link
+            >
           </li>
         </ul>
       </li>
-      <li
+      <li v-if="userStore.userHasRole('BPU')"
         class="rounded-lg bg-opacity-10 p-3 ml-1"
         :class="{ 'bg-white': $route.name === 'operation-planning' }"
       >
-        <router-link :to="{ name: 'operation-planning' }" class="flex space-x-3">
-          <!-- <img src="@/assets/barchart.svg" alt="" /> -->
-          <span> Operations Planning</span>
-        </router-link>
+        <router-link :to="{ path: '/' }" class="flex space-x-3">
+          <img src="@/assets/barchart.svg" alt="">
+          <span>  Operations Planning</span>
+        </router-link
+        >
       </li>
-
+      
       <li
+      v-if="userStore.userHasRole('BPU')"
         class="rounded-lg bg-opacity-10 p-3 ml-1"
         :class="{ 'bg-white': $route.name === 'operation-management' }"
       >
-        <router-link :to="{ name: 'operation-management' }" class="flex space-x-3">
-          <!-- <img src="@/assets/barchart.svg" alt="" /> -->
-          <span> Operations Management</span>
-        </router-link>
+        <router-link :to="{ paht: '/' }" class="flex space-x-3 ">
+          <img src="@/assets/barchart.svg" alt="">
+          <span>  Operations Management</span>
+        </router-link
+        >
       </li>
 
+
       <li
+      v-if="userStore.userHasRole('Sales Manager') || userStore.userHasRole('Sales Officer')"
         class="rounded-lg bg-opacity-10 p-4"
         :class="{ 'bg-white': $route.name === 'Sales & Marketing Performance' }"
       >
-        <router-link :to="{ name: 'Sales & Marketing Performance' }" class="flex items-center">
-          <!-- <img src="../assets/user-inactive.svg" /> -->
+        <router-link
+          :to="{ path:'/' }"
+          class="flex items-center">
+          <img src="../assets/user-inactive.svg" />
           <span class="ml-3">Dashboard</span>
         </router-link>
       </li>
 
+
       <li
+      v-if="userStore.userHasRole('Key Account Executive/DIP- Medium Enterprise') "
         class="rounded-lg bg-opacity-10 p-4"
         :class="{ 'bg-white': $route.name === 'My Accounts' }"
       >
-        <router-link :to="{ name: 'My Accounts' }" class="flex items-center">
-          <!-- <img src="../assets/user-inactive.svg" /> -->
+        <router-link
+          :to="{ path:'/' }"
+          class="flex items-center">
+          <img src="../assets/user-inactive.svg" />
           <span class="ml-3"> Obligations</span>
         </router-link>
       </li>
 
-      <li class="cursor-pointer p-4">
+
+      <li v-if="userStore.userHasRole('Sales Manager') || userStore.userHasRole('Sales Officer')" class="cursor-pointer p-4">
         <div
           class="flex items-center justify-between"
-          @click="expandObligationTab = !expandObligationTab"
-        >
+          @click="expandObligationTab = !expandObligationTab">
+        
           <div class="flex items-center">
-            <!-- <img src="../assets/dashbord-icon.svg" alt="dashboard" /> -->
+            <img src="../assets/dashbord-icon.svg" alt="dashboard" />
             <span class="ml-3">Obligations</span>
           </div>
-          <!-- <img
+          <img
             src="../assets/chevron.svg"
             :class="{ 'rotate-180': expandObligationTab === false }"
-          /> -->
+          />
         </div>
 
         <ul v-if="expandObligationTab" class="mt-4 text-start">
-          <li class="rounded-lg bg-opacity-10 p-3" :class="{ 'bg-white': $route.name === 'Leads' }">
-            <router-link :to="{ name: 'Leads' }">Lead Management</router-link>
-          </li>
-
           <li
             class="rounded-lg bg-opacity-10 p-3"
-            :class="{ 'bg-white': $route.name === 'Account Managers' }"
-          >
-            <router-link :to="{ name: 'Account Managers' }">Account Management</router-link>
+            :class="{ 'bg-white': $route.name === 'Leads' }">
+            <router-link :to="{ path: '/'}">Lead Management</router-link>
           </li>
 
-          <li
+          <li  v-if="userStore.userHasRole('Sales Manager')"
             class="rounded-lg bg-opacity-10 p-3"
-            :class="{ 'bg-white': $route.name === 'manager details' }"
+            :class="{ 'bg-white': $route.name === 'Account Managers' }"  
           >
-            <router-link :to="{ name: 'manager details' }">Account Management</router-link>
+            <router-link :to="{ path: '/' }"
+              >Account Management</router-link
+            >
+          </li>
+
+          <li  v-if="userStore.userHasRole('Sales Officer')"
+            class="rounded-lg bg-opacity-10 p-3"
+            :class="{ 'bg-white': $route.name === 'manager details' }"  
+          >
+            <router-link :to="{ path: '/' }"
+              >Account Management</router-link
+            >
           </li>
 
           <li
             class="rounded-lg bg-opacity-10 p-3"
             :class="{ 'bg-white': $route.name === 'Sales Orders' }"
           >
-            <router-link :to="{ name: 'Sales Orders' }">Sales Management</router-link>
+            <router-link :to="{ name: '/' }">Sales Management</router-link>
           </li>
+
         </ul>
       </li>
 
-      <li class="rounded-lg bg-opacity-10 p-4" :class="{ 'bg-white': $route.name === 'dashboard' }">
-        <router-link :to="{ name: isAdmin ? 'dashboard' : 'my tickets' }" class="flex items-center">
-          <!-- <img src="../assets/user-inactive.svg" /> -->
+      <li
+      v-if="userStore.userHasRole('Customer Support Supervisor') || userStore.userHasRole('Customer Support Officers') || userStore.userHasRole('Customer Support')"
+        class="rounded-lg bg-opacity-10 p-4"
+        :class="{ 'bg-white': $route.name === 'dashboard' }"
+      >
+        <router-link
+          :to="{ path: isAdmin ? '/' : '/' }"
+          class="flex items-center"
+        >
+          <img src="../assets/user-inactive.svg" />
           <span class="ml-3">Obligations</span>
         </router-link>
       </li>
 
+     
       <li
         class="rounded-lg bg-opacity-10 p-4"
         :class="{ 'bg-white': $route.name === 'customerDatabase' }"
       >
-        <router-link :to="{ name: 'customerDatabase' }" class="flex items-center">
-          <!-- <img src="../assets/user-inactive.svg" /> -->
+        <router-link
+          :to="{ path: '/' }"
+          class="flex items-center"
+        >
+          <img src="../assets/user-inactive.svg" />
           <span class="ml-3">Customer Insight</span>
         </router-link>
       </li>
@@ -197,23 +272,19 @@
         class="rounded-lg bg-opacity-10 p-4"
         :class="{ 'bg-white': $route.name === 'conversations' }"
       >
-        <router-link :to="{ name: 'conversations' }" class="flex items-center">
-          <!-- <img src="../assets/user-inactive.svg" /> -->
+        <router-link :to="{ path: '/' }" class="flex items-center">
+          <img src="../assets/user-inactive.svg" />
           <span class="ml-3">Conversations</span>
         </router-link>
       </li>
       <li class="rounded-lg bg-opacity-10 p-4">
         <a href="#" class="flex items-center">
-          <!-- <img src="../assets/user-inactive.svg" alt="Network Management" /> -->
+          <img src="../assets/user-inactive.svg" alt="Network Management" />
           <span class="ml-3">Notifications</span>
         </a>
       </li>
     </ul>
   </aside>
 </template>
-<script setup>
-import { ref } from 'vue'
-const expandWorkplaceTab = ref(false)
-const expandBPD = ref(false)
-</script>
-<style scoped></style>
+
+<style lang=""></style>
