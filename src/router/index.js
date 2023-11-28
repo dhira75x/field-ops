@@ -20,7 +20,7 @@ import ActivationResolutionReport from '../pages/ActivationResolutionReport.vue'
 import FaultResolutionReport from '../pages/FaultResolutionReport.vue'
 import NoFault from '../components/NoFault.vue'
 import TestPage from '../pages/TestPage.vue'
-import SideBar from '../components/SideBar.vue'
+// import SideBar from '../components/SideBar.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -118,11 +118,11 @@ const router = createRouter({
       name: 'NoFault',
       component: NoFault
     },
-    {
-      path: '/components/SideBar',
-      name: 'SideBar',
-      component: SideBar
-    },
+    // {
+    //   path: '/components/SideBar',
+    //   name: 'SideBar',
+    //   component: SideBar
+    // },
 
     {
       path: '/pages/YesFaultConfirmation',

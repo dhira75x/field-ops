@@ -14,10 +14,6 @@
             <span class="ml-3">My Workplace</span>
           </div>
           <img src="../assets/Icon Button.svg" />
-
-          <ul class="mt-4 text-start">
-            <li class="rounded-lg bg-opacity-10 p-3">Reports</li>
-          </ul>
         </div>
       </li>
       <li class="cursor-pointer p-4">

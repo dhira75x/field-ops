@@ -1,13 +1,13 @@
 <script setup>
 import { ref } from 'vue'
-import { useUserStore } from '@/stores/userStore';
+import { useUserStore } from '@/stores/userStore'
 import { RouterLink } from 'vue-router'
 const viewProfileOption = ref(false)
 const store = useUserStore()
 
 const logout = () => {
   store.logout()
-  // router.push({ name: 'home' }) 
+  // router.push({ name: 'home' })
 }
 </script>
 
@@ -15,7 +15,7 @@ const logout = () => {
   <header
     class="sticky top-0 z-40 flex w-full items-center justify-between bg-white py-7 px-10 shadow-md"
   >
-    <h1 class="text-2xl font-bold">Workplace</h1>
+    <h1 class="text-2xl font-bold">Obligations</h1>
     <div class="relative flex items-center">
       <div class="relative">
         <img src="../assets/bell.svg" alt="notifications" />
@@ -29,16 +29,19 @@ const logout = () => {
         class="ml-10 mr-3 h-10 w-10 rounded-full border-2 border-gray-400"
         @click.stop="viewProfileOption = !viewProfileOption"
       ></div>
-      
+
       <div
         v-if="store.$state.user"
         class="mx-4"
-        @click.stop="viewProfileOption = !viewProfileOption">
-        <div class="text-lg font-semibold">{{ store.$state.user ? store.$state.user.name : null }}</div>
+        @click.stop="viewProfileOption = !viewProfileOption"
+      >
+        <div class="text-lg font-semibold">
+          {{ store.$state.user ? store.$state.user.name : null }}
+        </div>
         <div class="text-xs font-semibold capitalize text-primary">
           {{ store.$state.user.position }}
         </div>
-      </div>  
+      </div>
 
       <img
         src="../assets/chevron-black.svg"
@@ -50,20 +53,13 @@ const logout = () => {
         v-if="viewProfileOption"
         class="absolute top-full right-0 w-40 cursor-pointer rounded border border-gray-300 bg-white capitalize"
       >
-    
-          <li
-            class=" p-3"
-            :class="{ 'text-red-600': $route.name === 'myProfile' }">
-            <router-link :to="{ name: 'myProfile' }">profile</router-link>
-          </li>
-          <li
-          class="cursor-pointer py-2 px-3 text-primary hover:bg-gray-200"
-          @click="logout">
+        <li class="p-3" :class="{ 'text-red-600': $route.name === 'myProfile' }">
+          <router-link :to="{ name: 'myProfile' }">profile</router-link>
+        </li>
+        <li class="cursor-pointer py-2 px-3 text-primary hover:bg-gray-200" @click="logout">
           logout
         </li>
-
       </ul>
     </div>
   </header>
 </template>
- 

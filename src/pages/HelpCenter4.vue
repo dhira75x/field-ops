@@ -1061,15 +1061,5 @@
     </div>
   </div>
 </template>
-<script>
-export default {
-  name: 'HelpCenter4',
-  components: {},
-  props: {},
-  data() {
-    // quickfix to have components available to pass as props
-    return {}
-  }
-}
-</script>
-<style scoped></style>
+
+<script setup></script>

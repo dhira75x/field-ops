@@ -385,18 +385,14 @@
         </div>
       </div>
     </div>
+    <div>
+      <Sidebar />
+    </div>
   </body>
 </template>
-<script>
-import '../assets/tailwind.css'
-export default {
-  name: 'HelpCenter',
-  components: {},
-  props: {},
-  data() {
-    // quickfix to have components available to pass as props
-    return {}
-  }
-}
+
+<script setup>
+import Sidebar from '../components/sidebar.vue'
 </script>
+
 <style scoped></style>
