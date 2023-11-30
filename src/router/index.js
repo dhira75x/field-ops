@@ -3,24 +3,20 @@ import HomeView from '../views/HomeView.vue'
 import HelpCenter from '../pages/HelpCenter.vue'
 import InstallationReport from '../pages/InstallationReport.vue'
 import AddSplicePlan from '../pages/AddSplicePlan.vue'
-import ViewConfirmationResquest from '../pages/ViewConfirmationRequest.vue'
-import ViewConfirmationRequests from '../pages/ViewConfirmationRequestProvisioning.vue'
+import ViewConfirmationRequest from '../pages/ViewConfirmationRequest.vue'
 import NoFaultConfirmation from '../pages/NoFaultConfirmation.vue'
 import YesFaultConfirmation from '../pages/YesFaultConfirmation.vue'
 import SurveyReport from '../pages/SurveyReport.vue'
 import ResourceRouteWork from '../pages/ResourceRouteWork.vue'
 import ResourceSplicePlan from '../pages/ResourceSplicePlan.vue'
 import ResourceWorkOrder from '../pages/ResourceWorkOrder.vue'
-import Obligation from '../pages/Obligation.vue'
-import ObligationConfirmation from '../pages/ObligationConfirmation.vue'
+import Obligation from '../pages/ObligationSchedule1.vue'
 import ObligationConfirmations from '../pages/ObligationConfirmationProvisioning.vue'
 import ObligationSchedule from '../pages/ObligationSchedule.vue'
-import ResourceReport from '../pages/index.vue'
 import ActivationResolutionReport from '../pages/ActivationResolutionReport.vue'
 import FaultResolutionReport from '../pages/FaultResolutionReport.vue'
-import NoFault from '../components/NoFault.vue'
 import TestPage from '../pages/TestPage.vue'
-// import SideBar from '../components/SideBar.vue'
+import ResourceDiagnosis from '../pages/ResourceDiagnosis.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -48,15 +44,9 @@ const router = createRouter({
     },
 
     {
-      path: '/pages/ViewConfirmationRequestProvisioning',
-      name: 'ViewConfirmationResquests',
-      component: ViewConfirmationRequests
-    },
-
-    {
       path: '/pages/ViewConfirmationRequest',
-      name: 'ViewConfirmationResquest',
-      component: ViewConfirmationResquest
+      name: 'ViewConfirmationRequest',
+      component: ViewConfirmationRequest
     },
 
     {
@@ -96,7 +86,7 @@ const router = createRouter({
     },
 
     {
-      path: '/pages/Obligation',
+      path: '/pages/ObligationSchedule1',
       name: 'Obligation',
       component: Obligation
     },
@@ -106,34 +96,15 @@ const router = createRouter({
       name: 'ObligationConfirmations',
       component: ObligationConfirmations
     },
-
     {
-      path: '/pages/ObligationConfirmation',
-      name: 'ObligationConfirmation',
-      component: ObligationConfirmation
+      path: '/pages/ResourceDiagnosis',
+      name: 'ResourceDiagnosis',
+      component: ResourceDiagnosis
     },
-
-    {
-      path: '/components/NoFault',
-      name: 'NoFault',
-      component: NoFault
-    },
-    // {
-    //   path: '/components/SideBar',
-    //   name: 'SideBar',
-    //   component: SideBar
-    // },
-
     {
       path: '/pages/YesFaultConfirmation',
       name: 'YesFaultConfirmation',
       component: YesFaultConfirmation
-    },
-
-    {
-      path: '/pages/index',
-      name: 'ResourceReport',
-      component: ResourceReport
     },
 
     {
