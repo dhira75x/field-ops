@@ -10,10 +10,10 @@
           <ChevronBack />
         </div>
         <div>
-          <ButtonOrder />
+          <DiagnosisButton />
         </div>
         <div class="my-3 mx-10">
-          <ResourceSplicePlan />
+          <ResourceDiagnosis />
         </div>
       </main>
     </template>
@@ -21,8 +21,9 @@
 </template>
 <script setup>
 import AppVerticalNavigation from '../components/AppHorizontalNavigation.vue'
-import ButtonOrder from '../components/ButtonOrder.vue'
+import DiagnosisButton from '../components/DiagnosisButton.vue'
 import ChevronBack from '../components/ChevronBack.vue'
 import ButtonSubmit from '../components/ButtonSubmit.vue'
-import ResourceSplicePlan from '../components/ResourceSplicePlan.vue'
+//import FormFill from '../components/FormFill.vue'
+import ResourceDiagnosis from '../components/ResourceDiagnosis.vue'
 </script>

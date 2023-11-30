@@ -1,6 +1,6 @@
 <template>
   <div class="flex justify-center min-h-screen place-items-center">
-    <div class="w-[628px] shadow-2xl min-h-[900px] flex justify-center">
+    <div class="w-[378px] shadow-2xl min-h-[620px] flex justify-center">
       <div class="w-3/4">
         <div
           class="text-legend-black text-left justify-start text-2xl font-bold font-['Source Sans Pro']"

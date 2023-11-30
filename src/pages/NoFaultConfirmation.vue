@@ -112,20 +112,6 @@
   </section>
 </template>
 
-<script>
-import '../assets/tailwind.css'
-import { defineProps } from 'vue'
-
-defineProps({})
-export default {
-  name: 'NoFaultConfirmation',
-  components: {},
-  props: {},
-  data() {
-    // quickfix to have components available to pass as props
-    return {}
-  }
-}
-</script>
+<script setup></script>
 
 <style scoped></style>
