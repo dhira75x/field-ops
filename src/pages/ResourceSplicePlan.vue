@@ -3,11 +3,13 @@
     <template v-slot:main-content>
       <main class="min-h-screen w-full bg-[#F5F5F5] pl-[260px]">
         <AppVerticalNavigation />
-        <div>
-          <ButtonSubmit />
-        </div>
-        <div>
-          <ChevronBack />
+        <div class="grid grid-cols-2 my-3">
+          <div>
+            <ChevronBack />
+          </div>
+          <div>
+            <ButtonSubmit />
+          </div>
         </div>
         <div>
           <ButtonOrder />

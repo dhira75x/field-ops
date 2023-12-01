@@ -125,9 +125,6 @@
         <div class="mb-3">
           <input type="text" id="field3" name="field3" class="mt-1 p-2 border w-full rounded-md" />
         </div>
-        <div class="mb-3">
-          <input type="text" id="field3" name="field3" class="mt-1 p-2 border w-full rounded-md" />
-        </div>
       </div>
     </div>
   </div>
