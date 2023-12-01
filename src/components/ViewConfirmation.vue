@@ -122,13 +122,13 @@
           <input type="text" id="field3" name="field3" class="mt-1 p-2 border w-full rounded-md" />
         </div>
         <div class="mb-3">
-          <input type="text" id="field3" name="field3" class="mt-1 p-2 border w-full rounded-md" />
+          <input type="date" id="field3" name="field3" class="mt-1 p-2 border w-full rounded-md" />
         </div>
         <div class="mb-3">
-          <input type="text" id="field3" name="field3" class="mt-1 p-2 border w-full rounded-md" />
+          <input type="date" id="field3" name="field3" class="mt-1 p-2 border w-full rounded-md" />
         </div>
         <div class="mb-3">
-          <input type="text" id="field3" name="field3" class="mt-1 p-2 border w-full rounded-md" />
+          <input type="date" id="field3" name="field3" class="mt-1 p-2 border w-full rounded-md" />
         </div>
       </div>
     </div>
@@ -144,7 +144,9 @@
       ></textarea>
     </div>
     <div>
-      <button type="submit" class="bg-orange-500 text-white py-2 px-4 rounded-md">Submit</button>
+      <router-link to="/pages/ViewConfirmationRequest">
+        <button type="submit" class="bg-orange-500 text-white py-2 px-4 rounded-md">Submit</button>
+      </router-link>
     </div>
   </div>
 </template>

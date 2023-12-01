@@ -16,7 +16,7 @@
         </div>
         <div class="my-16">
           <div class="w-full flex justify-center">
-            <router-link to="/pages/FaultResolutionReport">
+            <router-link to="/pages/ActivationResolutionReport">
               <button
                 class="focus:outline-none w-[300px] h-[60px] my-2 text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-semibold font-['Source Sans Pro'] rounded-lg text-lg px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
               >
@@ -25,7 +25,7 @@
             </router-link>
           </div>
           <div class="w-full flex justify-center">
-            <router-link to="/pages/FaultResolutionReport">
+            <router-link to="/pages/ActivationResolutionReport">
               <button
                 class="focus:outline-none w-[300px] h-[60px] my-2 text-white bg-yellow-500 hover:bg-yellow-400 focus:ring-4 focus:ring-yellow-300 font-semibold font-['Source Sans Pro'] rounded-lg text-lg px-5 py-2.5 me-2 mb-2 dark:bg-yellow-500 dark:hover:bg-yellow-600 dark:focus:ring-yellow-600"
               >

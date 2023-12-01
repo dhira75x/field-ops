@@ -5,10 +5,13 @@
     >
       Diagnosis
     </div>
-    <div
-      class="bg-[#f5d3c3] text-black w-[354px] h-[64px] font-semibold text-center cursor-pointer flex place-items-center justify-center rounded-tl-2xl rounded-tr-2xl shadow-inner"
-    >
-      Work Order
-    </div>
+
+    <router-link to="/pages/ResourceWorkOrder">
+      <div
+        class="bg-[#f5d3c3] text-black w-[354px] h-[64px] font-semibold text-center cursor-pointer flex place-items-center justify-center rounded-tl-2xl rounded-tr-2xl shadow-inner"
+      >
+        Work Order
+      </div>
+    </router-link>
   </section>
 </template>

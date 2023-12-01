@@ -51,16 +51,15 @@
           <td class="px-6 py-4 bg-blue-200">11:30:00</td>
           <td class="px-6 py-4 bg-blue-200">Completed</td>
           <td class="bg-blue-200">
-            <a
-              href="#"
-              class="font-semibold text-black-600 text-center dark:text-black-500 hover:underline rounded-md"
-              >View Resources</a
-            >
+            <router-link to="/pages/ResourceDiagnosis">
+              <a>View Resources</a>
+            </router-link>
           </td>
           <td class="bg-blue-200">
             <a
               href="#"
               class="font-semibold text-black-600 text-center dark:text-black-500 hover:underline rounded-md"
+              @click="showYesFaultConfirmationModal = !showYesFaultConfirmationModal"
               >Upload Report</a
             >
           </td>
@@ -87,16 +86,15 @@
           <td class="px-6 py-4 bg-blue-200">11:30:00</td>
           <td class="px-6 py-4 bg-blue-200">Completed</td>
           <td class="bg-blue-200">
-            <a
-              href="#"
-              class="font-semibold text-black-600 text-center dark:text-black-500 hover:underline rounded-md"
-              >View Resources</a
-            >
+            <router-link to="/pages/ResourceDiagnosis">
+              <a>View Resources</a>
+            </router-link>
           </td>
           <td class="bg-blue-200">
             <a
               href="#"
               class="font-semibold text-black-600 text-center dark:text-black-500 hover:underline rounded-md"
+              @click="showYesFaultConfirmationModal = !showYesFaultConfirmationModal"
               >Upload Report</a
             >
           </td>
@@ -123,24 +121,37 @@
           <td class="px-6 py-4 bg-red-200">11:30:00</td>
           <td class="px-6 py-4 bg-red-200">Completed</td>
           <td class="bg-red-200">
-            <a
-              href="#"
-              class="font-semibold text-black-600 text-center dark:text-black-500 hover:underline rounded-md"
-              >View Resources</a
-            >
+            <router-link to="/pages/ResourceDiagnosis">
+              <a>View Resources</a>
+            </router-link>
           </td>
           <td class="bg-red-200">
             <a
               href="#"
               class="font-semibold text-black-600 text-center dark:text-black-500 hover:underline rounded-md"
+              @click="showYesFaultConfirmationModal = !showYesFaultConfirmationModal"
               >Upload Report</a
             >
           </td>
         </tr>
       </tbody>
     </table>
+    <AppModal
+      v-if="showYesFaultConfirmationModal"
+      @click="showYesFaultConfirmationModal = !showYesFaultConfirmationModal"
+    >
+      <template #modal-content>
+        <YesFaultConfirmation />
+      </template>
+    </AppModal>
   </div>
 </template>
 <script setup>
+import { ref } from 'vue'
+const showYesFaultConfirmationModal = ref(false)
+//import { ref } from 'vue'
+//import { useRouter } from 'vue-router'
+import AppModal from '../components/AppModal.vue'
+import YesFaultConfirmation from '../pages/YesFaultConfirmation.vue'
 import AssignmentDate6 from './AssignmentDate6.vue'
 </script>

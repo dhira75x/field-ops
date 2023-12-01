@@ -9,7 +9,7 @@
         <div class="m-24">
           <ScheduleList1 />
         </div>
-        <div class="m-24">
+        <div class="mx-24 my-36">
           <ScheduleList2 />
         </div>
       </main>

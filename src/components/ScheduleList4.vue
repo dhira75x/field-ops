@@ -46,7 +46,7 @@
           <td class="px-6 py-4 bg-blue-200">Anthony Adeyi</td>
           <td class="px-6 py-4 bg-blue-200">15 Malcolm Fraser Street,Asokoro, Abuja</td>
           <td class="px-6 py-4 bg-blue-200">081848849663</td>
-          <td class="px-6 py-4 bg-blue-200">Survey</td>
+          <td class="px-6 py-4 bg-blue-200">Testing and Activation</td>
           <td class="px-6 py-4 bg-blue-200">10:30:00</td>
           <td class="px-6 py-4 bg-blue-200">11:30:00</td>
           <td class="px-6 py-4 bg-blue-200">Completed</td>

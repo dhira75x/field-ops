@@ -50,21 +50,20 @@
           <td class="px-6 py-4 bg-blue-200">Anthony Adeyi</td>
           <td class="px-6 py-4 bg-blue-200">15 Malcolm Fraser Street,Asokoro, Abuja</td>
           <td class="px-6 py-4 bg-blue-200">081848849663</td>
-          <td class="px-6 py-4 bg-blue-200">Survey</td>
+          <td class="px-6 py-4 bg-blue-200">Fault Provisioning</td>
           <td class="px-6 py-4 bg-blue-200">10:30:00</td>
           <td class="px-6 py-4 bg-blue-200">11:30:00</td>
           <td class="px-6 py-4 bg-blue-200">Completed</td>
           <td class="bg-blue-200">
-            <a
-              href="#"
-              class="font-semibold text-black-600 text-center dark:text-black-500 hover:underline rounded-md"
-              >View Resources</a
-            >
+            <router-link to="/pages/ResourceDiagnosis">
+              <a>View Resources</a>
+            </router-link>
           </td>
           <td class="bg-blue-200">
             <a
               href="#"
               class="font-semibold text-black-600 text-center dark:text-black-500 hover:underline rounded-md"
+              @click="showYesFaultConfirmationModal = !showYesFaultConfirmationModal"
               >Upload Report</a
             >
           </td>
@@ -86,21 +85,20 @@
           <td class="px-6 py-4 bg-blue-200">Anthony Adeyi</td>
           <td class="px-6 py-4 bg-blue-200">15 Malcolm Fraser Street,Asokoro, Abuja</td>
           <td class="px-6 py-4 bg-blue-200">081848849663</td>
-          <td class="px-6 py-4 bg-blue-200">Survey</td>
+          <td class="px-6 py-4 bg-blue-200">Activation Provisioning</td>
           <td class="px-6 py-4 bg-blue-200">10:30:00</td>
           <td class="px-6 py-4 bg-blue-200">11:30:00</td>
           <td class="px-6 py-4 bg-blue-200">Completed</td>
           <td class="bg-blue-200">
-            <a
-              href="#"
-              class="font-semibold text-black-600 text-center dark:text-black-500 hover:underline rounded-md"
-              >View Resources</a
-            >
+            <router-link to="/pages/ResourceDiagnosis">
+              <a>View Resources</a>
+            </router-link>
           </td>
           <td class="bg-blue-200">
             <a
               href="#"
               class="font-semibold text-black-600 text-center dark:text-black-500 hover:underline rounded-md"
+              @click="showYesFaultConfirmationActModal = !showYesFaultConfirmationActModal"
               >Upload Report</a
             >
           </td>
@@ -122,21 +120,20 @@
           <td class="px-6 py-4 bg-blue-200">Anthony Adeyi</td>
           <td class="px-6 py-4 bg-blue-200">15 Malcolm Fraser Street,Asokoro, Abuja</td>
           <td class="px-6 py-4 bg-blue-200">081848849663</td>
-          <td class="px-6 py-4 bg-blue-200">Survey</td>
+          <td class="px-6 py-4 bg-blue-200">Fault Provisioning</td>
           <td class="px-6 py-4 bg-blue-200">10:30:00</td>
           <td class="px-6 py-4 bg-blue-200">11:30:00</td>
           <td class="px-6 py-4 bg-blue-200">Completed</td>
           <td class="bg-blue-200">
-            <a
-              href="#"
-              class="font-semibold text-black-600 text-center dark:text-black-500 hover:underline rounded-md"
-              >View Resources</a
-            >
+            <router-link to="/pages/ResourceDiagnosis">
+              <a>View Resources</a>
+            </router-link>
           </td>
           <td class="bg-blue-200">
             <a
               href="#"
               class="font-semibold text-black-600 text-center dark:text-black-500 hover:underline rounded-md"
+              @click="showYesFaultConfirmationActModal = !showYesFaultConfirmationModal"
               >Upload Report</a
             >
           </td>
@@ -158,21 +155,20 @@
           <td class="px-6 py-4 bg-green-200">Anthony Adeyi</td>
           <td class="px-6 py-4 bg-green-200">15 Malcolm Fraser Street,Asokoro, Abuja</td>
           <td class="px-6 py-4 bg-green-200">081848849663</td>
-          <td class="px-6 py-4 bg-green-200">Survey</td>
+          <td class="px-6 py-4 bg-green-200">Activation Provisioning</td>
           <td class="px-6 py-4 bg-green-200">10:30:00</td>
           <td class="px-6 py-4 bg-green-200">11:30:00</td>
           <td class="px-6 py-4 bg-green-200">Completed</td>
           <td class="bg-green-200">
-            <a
-              href="#"
-              class="font-semibold text-black-600 text-center dark:text-black-500 hover:underline rounded-md"
-              >View Resources</a
-            >
+            <router-link to="/pages/ResourceDiagnosis">
+              <a>View Resources</a>
+            </router-link>
           </td>
           <td class="bg-green-200">
             <a
               href="#"
               class="font-semibold text-black-600 text-center dark:text-black-500 hover:underline rounded-md"
+              @click="showYesFaultConfirmationActModal = !showYesFaultConfirmationActModal"
               >Upload Report</a
             >
           </td>
@@ -194,21 +190,20 @@
           <td class="px-6 py-4 bg-green-200">Anthony Adeyi</td>
           <td class="px-6 py-4 bg-green-200">15 Malcolm Fraser Street,Asokoro, Abuja</td>
           <td class="px-6 py-4 bg-green-200">081848849663</td>
-          <td class="px-6 py-4 bg-green-200">Survey</td>
+          <td class="px-6 py-4 bg-green-200">Fault Provisioning</td>
           <td class="px-6 py-4 bg-green-200">10:30:00</td>
           <td class="px-6 py-4 bg-green-200">11:30:00</td>
           <td class="px-6 py-4 bg-green-200">Completed</td>
           <td class="bg-green-200">
-            <a
-              href="#"
-              class="font-semibold text-black-600 text-center dark:text-black-500 hover:underline rounded-md"
-              >View Resources</a
-            >
+            <router-link to="/pages/ResourceDiagnosis">
+              <a>View Resources</a>
+            </router-link>
           </td>
           <td class="bg-green-200">
             <a
               href="#"
               class="font-semibold text-black-600 text-center dark:text-black-500 hover:underline rounded-md"
+              @click="showYesFaultConfirmationModal = !showYesFaultConfirmationModal"
               >Upload Report</a
             >
           </td>
@@ -230,21 +225,20 @@
           <td class="px-6 py-4 bg-green-200">Anthony Adeyi</td>
           <td class="px-6 py-4 bg-green-200">15 Malcolm Fraser Street,Asokoro, Abuja</td>
           <td class="px-6 py-4 bg-green-200">081848849663</td>
-          <td class="px-6 py-4 bg-green-200">Survey</td>
+          <td class="px-6 py-4 bg-green-200">Activation Provisioning</td>
           <td class="px-6 py-4 bg-green-200">10:30:00</td>
           <td class="px-6 py-4 bg-green-200">11:30:00</td>
           <td class="px-6 py-4 bg-green-200">Completed</td>
           <td class="bg-green-200">
-            <a
-              href="#"
-              class="font-semibold text-black-600 text-center dark:text-black-500 hover:underline rounded-md"
-              >View Resources</a
-            >
+            <router-link to="/pages/ResourceDiagnosis">
+              <a>View Resources</a>
+            </router-link>
           </td>
           <td class="bg-green-200">
             <a
               href="#"
               class="font-semibold text-black-600 text-center dark:text-black-500 hover:underline rounded-md"
+              @click="showYesFaultConfirmationActModal = !showYesFaultConfirmationActModal"
               >Upload Report</a
             >
           </td>
@@ -266,21 +260,20 @@
           <td class="px-6 py-4 bg-red-200">Anthony Adeyi</td>
           <td class="px-6 py-4 bg-red-200">15 Malcolm Fraser Street,Asokoro, Abuja</td>
           <td class="px-6 py-4 bg-red-200">081848849663</td>
-          <td class="px-6 py-4 bg-red-200">Survey</td>
+          <td class="px-6 py-4 bg-red-200">Fault Provisioning</td>
           <td class="px-6 py-4 bg-red-200">10:30:00</td>
           <td class="px-6 py-4 bg-red-200">11:30:00</td>
           <td class="px-6 py-4 bg-red-200">Completed</td>
           <td class="bg-red-200">
-            <a
-              href="#"
-              class="font-semibold text-black-600 text-center dark:text-black-500 hover:underline rounded-md"
-              >View Resources</a
-            >
+            <router-link to="/pages/ResourceDiagnosis">
+              <a>View Resources</a>
+            </router-link>
           </td>
           <td class="bg-red-200">
             <a
               href="#"
               class="font-semibold text-black-600 text-center dark:text-black-500 hover:underline rounded-md"
+              @click="showYesFaultConfirmationModal = !showYesFaultConfirmationModal"
               >Upload Report</a
             >
           </td>
@@ -302,29 +295,52 @@
           <td class="px-6 py-4 bg-red-200">Anthony Adeyi</td>
           <td class="px-6 py-4 bg-red-200">15 Malcolm Fraser Street,Asokoro, Abuja</td>
           <td class="px-6 py-4 bg-red-200">081848849663</td>
-          <td class="px-6 py-4 bg-red-200">Survey</td>
+          <td class="px-6 py-4 bg-red-200">Fault Provisioning</td>
           <td class="px-6 py-4 bg-red-200">10:30:00</td>
           <td class="px-6 py-4 bg-red-200">11:30:00</td>
           <td class="px-6 py-4 bg-red-200">Completed</td>
           <td class="bg-red-200">
-            <a
-              href="#"
-              class="font-semibold text-black-600 text-center dark:text-black-500 hover:underline rounded-md"
-              >View Resources</a
-            >
+            <router-link to="/pages/ResourceDiagnosis">
+              <a>View Resources</a>
+            </router-link>
           </td>
           <td class="bg-red-200">
             <a
               href="#"
               class="font-semibold text-black-600 text-center dark:text-black-500 hover:underline rounded-md"
+              @click="showYesFaultConfirmationModal = !showYesFaultConfirmationModal"
               >Upload Report</a
             >
           </td>
         </tr>
       </tbody>
     </table>
+    <AppModal
+      v-if="showYesFaultConfirmationModal"
+      @click="showYesFaultConfirmationModal = !showYesFaultConfirmationModal"
+    >
+      <template #modal-content>
+        <YesFaultConfirmation />
+      </template>
+    </AppModal>
+    <AppModal
+      v-if="showYesFaultConfirmationActModal"
+      @click="showYesFaultConfirmationActModal = !showYesFaultConfirmationActModal"
+    >
+      <template #modal-content>
+        <YesFaultConfirmationAct />
+      </template>
+    </AppModal>
   </div>
 </template>
 <script setup>
+import { ref } from 'vue'
+const showYesFaultConfirmationModal = ref(false)
+const showYesFaultConfirmationActModal = ref(false)
+//import { ref } from 'vue'
+//import { useRouter } from 'vue-router'
+import AppModal from '../components/AppModal.vue'
+import YesFaultConfirmationAct from '../pages/YesFaultConfirmationAct.vue'
+import YesFaultConfirmation from '../pages/YesFaultConfirmation.vue'
 import AssignmentDate7 from './AssignmentDate7.vue'
 </script>
