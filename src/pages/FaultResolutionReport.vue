@@ -5,7 +5,9 @@
         <AppHorizontalNavigation />
         <div class="grid grid-cols-2 my-3">
           <div>
-            <ChevronBack />
+            <router-link to="/pages/ObligationSchedule">
+              <ChevronBack />
+            </router-link>
           </div>
           <div>
             <ButtonSubmit />

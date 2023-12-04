@@ -4,10 +4,10 @@
       <main class="min-h-screen w-full bg-[#F5F5F5] pl-[260px]">
         <AppHorizontalNavigation />
         <div>
-          <TopBar class="m-10" />
+          <TopBar class="my-10 mx-20" />
         </div>
         <div>
-          <ObligationConfirmationList class="my-10 mx-18" />
+          <ObligationConfirmationList class="my-8 mx-24" />
         </div>
       </main>
     </template>

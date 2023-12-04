@@ -16,15 +16,17 @@ import ObligationSchedule from '../pages/ObligationSchedule.vue'
 import ActivationResolutionReport from '../pages/ActivationResolutionReport.vue'
 import FaultResolutionReport from '../pages/FaultResolutionReport.vue'
 import TestPage from '../pages/TestPage.vue'
+import Login from '../pages/Login.vue'
 import ResourceDiagnosis from '../pages/ResourceDiagnosis.vue'
+import MyWorkPlace from '../pages/MyWorkPlace.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: HomeView
+      name: 'login',
+      component: Login
     },
     {
       path: '/pages/HelpCenter',
@@ -48,7 +50,11 @@ const router = createRouter({
       name: 'ViewConfirmationRequest',
       component: ViewConfirmationRequest
     },
-
+    {
+      path: '/views/HomeView',
+      name: 'home',
+      component: HomeView
+    },
     {
       path: '/pages/NoFaultConfirmation',
       name: 'NoFaultConfirmation',
@@ -59,6 +65,11 @@ const router = createRouter({
       path: '/pages/SurveyReport',
       name: 'SurveyReport',
       component: SurveyReport
+    },
+    {
+      path: '/pages/MyWorkPlace',
+      name: 'MyWorkPlace',
+      component: MyWorkPlace
     },
 
     {

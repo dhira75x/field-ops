@@ -34,32 +34,33 @@
             </router-link>
           </div>
           <div class="w-full flex justify-center">
-            <button
-              class="focus:outline-none w-[400px] h-[60px] my-2 text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-semibold font-['Source Sans Pro'] rounded-lg text-lg px-7 py-2.5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900"
-              @click="showNoFaultConfirmationModal = !showNoFaultConfirmationModal"
-            >
-              Not Completed
-            </button>
+            <router-link to="/pages/NoFaultConfirmation">
+              <button
+                class="focus:outline-none w-[290px] h-[60px] my-2 text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-semibold font-['Source Sans Pro'] rounded-lg text-lg px-7 py-2.5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900"
+              >
+                Not Completed
+              </button>
+            </router-link>
           </div>
         </div>
       </div>
-      <AppModal
+      <!-- <AppModal
         v-if="showNoFaultConfirmationModal"
         @click="showNoFaultConfirmationModal = !showNoFaultConfirmationModal"
       >
         <template #modal-content>
           <NoFaultConfirmation />
         </template>
-      </AppModal>
+      </AppModal> -->
     </div>
   </div>
 </template>
 <script setup>
-import { ref } from 'vue'
-const showNoFaultConfirmationModal = ref(false)
+//import { ref } from 'vue'
+//const showNoFaultConfirmationModal = ref(false)
 //import { ref } from 'vue'
 //import { useRouter } from 'vue-router'
-import AppModal from '../components/AppModal.vue'
-import NoFaultConfirmation from '../pages/NoFaultConfirmation.vue'
+//import AppModal from '../components/AppModal.vue'
+//import NoFaultConfirmation from '../pages/NoFaultConfirmation.vue'
 </script>
 <style scoped></style>

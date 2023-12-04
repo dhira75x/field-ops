@@ -144,7 +144,7 @@
       ></textarea>
     </div>
     <div>
-      <router-link to="/pages/ViewConfirmationRequest">
+      <router-link to="/pages/ObligationConfirmationProvisioning">
         <button type="submit" class="bg-orange-500 text-white py-2 px-4 rounded-md">Submit</button>
       </router-link>
     </div>

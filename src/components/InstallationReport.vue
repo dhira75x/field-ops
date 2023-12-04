@@ -15,6 +15,22 @@
           Oct 30, 2023 11:35 AM
         </div>
       </nav>
+      <nav
+        class="mt-1 p-2 border text-black-300 bg-white-600 font-bold font-[Source Sans Pro] text-[15px] w-full flex flex-row rounded-md"
+      >
+        <router-link to="/pages/InstallationReport">
+          <div class="mx-10">Outdoor Installation</div>
+        </router-link>
+        <router-link to="/pages/InstallationReport">
+          <div class="text-[red]">Indoor Installation</div>
+        </router-link>
+
+        <div
+          class="text-black text-base font-normal font-['Source Sans Pro'] text-center absolute left-[1598px]"
+        >
+          Nov 30, 2023 11:35 AM
+        </div>
+      </nav>
     </div>
     <div class="grid grid-cols-1 gap-4">
       <div class="col-span-1">

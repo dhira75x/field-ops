@@ -94,12 +94,14 @@
         </div>
 
         <div class="flex justify-center my-4">
-          <button
-            type="submit"
-            class="bg-orange-500 text-white px-4 py-2 rounded-md focus:outline-none"
-          >
-            Submit
-          </button>
+          <router-link to="/pages/FaultResolutionReport">
+            <button
+              type="submit"
+              class="bg-orange-500 text-white px-4 py-2 rounded-md focus:outline-none"
+            >
+              Submit
+            </button>
+          </router-link>
         </div>
       </form>
     </div>

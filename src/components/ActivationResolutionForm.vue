@@ -270,12 +270,12 @@
         <input type="file" id="picture" name="picture" class="w-[1012px] p-2 border rounded-md" />
       </div>
     </div>
-    <div class="w-full h-[200px] bg-white shadow-sm border-gray-50 my-7">
+    <div class="w-full h-[230px] bg-white shadow-sm border-gray-50 my-7">
       <nav
         class="border bg-legend-black font-semibold font-[Source Sans Pro] text-[25px] w-full flex flex-row rounded-md"
       >
         <div class="text-[white] mx-2 my-2">
-          <h2>Service Backbone</h2>
+          <h2>Splice Plan</h2>
         </div>
 
         <div
@@ -288,31 +288,32 @@
       </nav>
       <div>
         <table class="w-full bg-white-300">
-          <thead class="mb-3 h-[35px] w-full bg-gray-300 border border-gray-600 items-center">
+          <thead class="mb-3 h-[25px] w-full bg-gray-300 border border-gray-600 items-center">
             <tr>
               <th scope="col" class="px-3 py-3 w-[56px] h-[19px]">S/N:</th>
-              <th scope="col" class="px-3 py-3 w-[550px] h-[19px]">Description</th>
-              <th scope="col" class="px-3 py-3 w-[80px] h-[19px] mx-10">Unit</th>
-              <th scope="col" class="px-3 py-3 w-[80px] h-[19px] mx-10">Quantity</th>
+              <th scope="col" class="px-3 py-3 w-[150px] h-[19px]">Name</th>
+              <th scope="col" class="px-3 py-3 w-[80px] h-[19px] mx-10">Type</th>
+              <th scope="col" class="px-3 py-3 w-[450px] h-[19px]">Location</th>
+              <th scope="col" class="px-3 py-3 w-[80px] h-[19px] mx-10">Buffer</th>
+              <th scope="col" class="px-3 py-3 w-[80px] h-[19px] mx-10">Core</th>
+              <th scope="col" class="px-3 py-3 w-[80px] h-[19px] mx-10">Schedule Start Date</th>
+              <th scope="col" class="px-3 py-3 w-[80px] h-[19px] mx-10">Start Date</th>
+              <th scope="col" class="px-3 py-3 w-[80px] h-[19px] mx-10">Schedule End Date</th>
+              <th scope="col" class="px-3 py-3 w-[80px] h-[19px] mx-10">End Date</th>
               <th scope="col" class="px-3 py-3 w-[200px] h-[19px] mx-10">Action</th>
             </tr>
           </thead>
           <tbody class="my-20 items-center pb-5">
             <td class="px-6 py-4 bg-white-200 text-center">01</td>
-            <td class="px-6 py-4 bg-white-200 text-center">
-              Pulling of FOC & Callibration (without stagger from Suburban)
-            </td>
-            <td class="px-6 py-4 bg-white-200 text-center">Meter</td>
-            <td class="px-6 py-4 bg-white-200 text-center">
-              <input
-                type="number"
-                id="number-input"
-                aria-describedby="helper-text-explanation"
-                class="bg-gray-50 border border-gray-300 text-black-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-white-700 dark:border-gray-600 dark:placeholder-black dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                placeholder="90210"
-                required
-              />
-            </td>
+            <td class="px-6 py-4 bg-white-200 text-center">Bello Akinyemi</td>
+            <td class="px-6 py-4 bg-white-200 text-center">FAT</td>
+            <td class="px-6 py-4 bg-white-200 text-center">20 Tijjani Babangiga Road</td>
+            <td class="px-6 py-4 bg-white-200 text-center">N/A</td>
+            <td class="px-6 py-4 bg-white-200 text-center">N/A</td>
+            <td class="px-6 py-4 bg-white-200 text-center"></td>
+            <td class="px-6 py-4 bg-white-200 text-center"></td>
+            <td class="px-6 py-4 bg-white-200 text-center"></td>
+            <td class="px-6 py-4 bg-white-200 text-center"></td>
             <td>
               <div class="flex flex-row-reverse mr-10 gap-4">
                 <button
