@@ -24,14 +24,13 @@ onMounted(() => {
     </div>
     <ul class="font-sm mt-10 text-[#B3B3B3] h-full overflow-y-scroll">
       <li class="cursor-pointer p-4">
-        <div
-          class="flex items-center justify-between"
-          @click="expandWorkplaceTab = !expandWorkplaceTab"
-        >
-          <div class="flex items-center">
-            <img src="../assets/dashboard.svg" alt="dashboard" />
-            <span class="ml-3">My Workplace</span>
-          </div>
+        <div class="flex items-center justify-between">
+          <router-link :to="{ path: '/pages/MyWorkPlace' }">
+            <div class="flex items-center">
+              <img src="../assets/dashboard.svg" alt="dashboard" />
+              <span class="ml-3">My Workplace</span>
+            </div>
+          </router-link>
           <img src="@/assets/chevron.svg" :class="{ 'rotate-180': expandWorkplaceTab === false }" />
         </div>
         <ul v-if="expandWorkplaceTab" class="mt-4 text-start">
