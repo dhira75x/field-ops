@@ -1,18 +1,19 @@
 <template>
   <app-layout>
     <template v-slot:main-content>
-      <main class="min-h-screen w-full bg-[#F5F5F5] pl-[260px]">
+      <main class="static min-h-screen w-screen bg-[#F5F5F5] pl-[260px]">
         <AppHorizontalNavigation />
-        <div>
-          <AppVerticalNavigation />
-          <TopBar class="my-10 mx-10" />
-        </div>
-        <div class="m-10 w-full">
-          <ScheduleList1 />
-        </div>
-        <div class="mx-10 my-24 w-full">
-          <ScheduleList2 />
-        </div>
+        <section class="p-10">
+          <div>
+            <TopBar class="mx-10 mt-16 w-screen" />
+          </div>
+          <div>
+            <ScheduleList1 class="m-10 w-screen" />
+          </div>
+          <div>
+            <ScheduleList2 class="mx-10 my-36 w-screen" />
+          </div>
+        </section>
       </main>
     </template>
   </app-layout>
@@ -20,7 +21,7 @@
 <script setup>
 // import AppVerticalNavigation from '../components/AppVerticalNavigation.vue'
 import AppHorizontalNavigation from '../components/AppHorizontalNavigation.vue'
-import AppVerticalNavigation from '../components/AppVerticalNavigation.vue'
+//import AppVerticalNavigation from '../components/AppVerticalNavigation.vue'
 import ScheduleList1 from '../components/ScheduleList1.vue'
 import ScheduleList2 from '../components/ScheduleList2.vue'
 import TopBar from '../components/TopBar.vue'
