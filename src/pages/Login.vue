@@ -70,19 +70,14 @@ const login = async () => {
 </script>
 
 <template>
-  <section
-    class="bg-no-repeat bg-cover"
-    style="
+  <section class="bg-no-repeat bg-cover" style="
       background-image: url('../assets/login-bg1.svg');
       background-repeat: no-repeat;
       background-size: cover;
-    "
-  >
+    ">
     <main class="relative grid h-screen place-content-center place-items-center">
-      <div
-        v-if="loginFailed"
-        class="bg-[url('@/assets/login-bg1.svg')] absolute top-20 right-32 grid h-14 w-40 place-content-center bg-gray-700 text-lg font-medium text-white"
-      >
+      <div v-if="loginFailed"
+        class="bg-[url('@/assets/login-bg1.svg')] absolute top-20 right-32 grid h-14 w-40 place-content-center bg-gray-700 text-lg font-medium text-white">
         <span>Login failed</span>
       </div>
       <img src="@/assets/legend.svg" alt="Legend home page" />
@@ -92,21 +87,13 @@ const login = async () => {
         <p class="mb-8 text-center">Enter your credentials below</p>
         <div class="my-6 w-[369px]">
           <label class="mb-1 block font-semibold">Email</label>
-          <input
-            v-model="email"
-            type="text"
-            placeholder="name@legend.ng"
-            class="block w-full rounded border border-gray-300 p-2 focus:outline-none"
-          />
+          <input v-model="email" type="text" placeholder="name@legend.ng"
+            class="block w-full rounded border border-gray-300 p-2 focus:outline-none" />
         </div>
         <div class="relative my-6">
           <label class="mb-1 block font-semibold">Password</label>
-          <input
-            v-model="password"
-            type="password"
-            placeholder="*************"
-            class="block w-full rounded border border-gray-300 p-2 focus:outline-none"
-          />
+          <input v-model="password" type="password" placeholder="*************"
+            class="block w-full rounded border border-gray-300 p-2 focus:outline-none" />
         </div>
         <div class="my-3 flex items-center justify-between text-sm">
           <div class="flex items-center">
@@ -115,13 +102,9 @@ const login = async () => {
           </div>
           <!-- <a href="#">Recover Password?</a> -->
         </div>
-        <button
-          type="submit"
-          :value="loading ? 'Loading...' : 'Login'"
-          :disabled="loading"
+        <button type="submit" :value="loading ? 'Loading...' : 'Login'" :disabled="loading"
           class="mt-10 block w-full bg-orange-500 cursor-pointer rounded-md bg-primary py-3 text-center text-white"
-          :class="{ 'cursor-not-allowed bg-orange-500 text-white': loading }"
-        >
+          :class="{ 'cursor-not-allowed bg-orange-500 text-white': loading }">
           Login
         </button>
       </form>
