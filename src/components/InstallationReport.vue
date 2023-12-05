@@ -2,20 +2,6 @@
   <div class="w-full h-[1300px] bg-white p-8 rounded shadow">
     <div class="mb-4">
       <nav
-        class="mt-1 p-2 border text-black-300 bg-white-600 font-semibold font-[Source Sans Pro] text-[15px] w-full flex flex-row rounded-md"
-      >
-        <div class="mx-10 cursor-pointer">
-          <h2>Outdoor Installation</h2>
-        </div>
-        <div class="text-[red] cursor-pointer">Indoor Installation</div>
-
-        <div
-          class="text-black text-base font-normal font-['Source Sans Pro'] text-center absolute left-[1598px]"
-        >
-          Oct 30, 2023 11:35 AM
-        </div>
-      </nav>
-      <nav
         class="mt-1 p-2 border text-black-300 bg-white-600 font-bold font-[Source Sans Pro] text-[15px] w-full flex flex-row rounded-md"
       >
         <router-link to="/pages/InstallationReport">
