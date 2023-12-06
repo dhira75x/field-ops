@@ -1,11 +1,11 @@
 <template>
   <div class="grid grid-cols-2 w-full h-[51px] bg-white">
-    <div class="relative max-w-sm">
-      <div class="mx-2 relative max-w-sm justify-items-center">
+    <div class="flex max-w-sm">
+      <div class="mx-2 flex justify-items-center">
         <img src="../assets/fi_chevron-left.svg" alt="" />
       </div>
 
-      <div class="relative max-w-sm text-black mx-8 text-lg font-normal font-['Source Sans Pro']">
+      <div class="flex max-w-sm text-black my-4 text-lg font-normal font-['Source Sans Pro']">
         July 29, 2023
       </div>
     </div>
