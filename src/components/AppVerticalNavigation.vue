@@ -24,13 +24,13 @@ onMounted(() => {
     </div>
     <ul class="font-sm mt-10 text-[#B3B3B3] h-full overflow-y-scroll">
       <li class="cursor-pointer p-4">
-        <div class="flex items-center justify-between">
-          <router-link :to="{ path: '/pages/MyWorkPlace' }">
+        <div @click="expandWorkplaceTab=!expandWorkplaceTab" class="flex items-center justify-between">
+          <!-- <router-link :to="{ path: '/pages/MyWorkPlace' }"> -->
             <div class="flex items-center">
               <img src="../assets/dashboard.svg" alt="dashboard" />
               <span class="ml-3">My Workplace</span>
             </div>
-          </router-link>
+          <!-- </router-link> -->
           <img src="@/assets/chevron.svg" :class="{ 'rotate-180': expandWorkplaceTab === false }" />
         </div>
         <ul v-if="expandWorkplaceTab" class="mt-4 text-start">
@@ -223,7 +223,7 @@ onMounted(() => {
         class="rounded-lg bg-opacity-10 p-4"
         :class="{ 'bg-white': $route.name === 'customerDatabase' }"
       >
-        <router-link :to="{ path: '../pages/ObligationSchedule.vue' }" class="flex items-center">
+        <router-link :to="{ name: 'ObligationSchedule' }" class="flex items-center">
           <img src="../assets/user-inactive.svg" />
           <span class="ml-3">Obligations</span>
         </router-link>
@@ -232,8 +232,8 @@ onMounted(() => {
         class="rounded-lg bg-opacity-10 p-4"
         :class="{ 'bg-white': $route.name === 'conversations' }"
       >
-        <router-link :to="{ path: '../pages/HelpCenter.vue' }" class="flex items-center">
-          <img src="../assets/user-inactive.svg" />
+        <router-link :to="{ name:'HelpCenter' }" class="flex items-center">
+          <img src="@/assets/user-inactive.svg" />
           <span class="ml-3">Help Center</span>
         </router-link>
       </li>

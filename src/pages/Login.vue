@@ -71,9 +71,9 @@ const login = async () => {
 
 <template>
   <main
-    class="relative grid h-screen place-content-center place-items-center"
+    class="bg-gradient-to-l relative grid h-screen place-content-center place-items-center"
     style="
-      background-image: url('../assets/loginbg.svg');
+      background-image: url('/src/assets/loginbg.svg');
       background-repeat: no-repeat;
       background-size: cover;
     "
@@ -86,7 +86,7 @@ const login = async () => {
     </div>
     <img src="@/assets/legend.svg" alt="Legend home page" />
 
-    <form class="mt-8 w-full bg-white px-20 py-14 shadow-md" @submit.prevent="login">
+    <form class="bg-gradient-to-l mt-8 w-full bg-white px-20 py-14 shadow-md" @submit.prevent="login">
       <h1 class="mb-2 text-center text-2xl font-bold">WorkPlace</h1>
       <p class="mb-8 text-center">Enter your credentials below</p>
       <div class="my-6 w-[369px]">
