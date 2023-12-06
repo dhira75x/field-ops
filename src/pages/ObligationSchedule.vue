@@ -34,7 +34,6 @@ const activeTab=ref(1);
 const navItems = [
     { id: 1, label: "My Schedule" },
     { id: 2, label: "Confirmations" },
-  
   ];
 </script>
 <style scoped></style>
