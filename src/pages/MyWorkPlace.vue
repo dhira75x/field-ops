@@ -3,19 +3,22 @@ import AppHorizontalNavigation from '@/components/AppHorizontalNavigation.vue'
 import AppVerticalNavigation from '../components/AppVerticalNavigation.vue'
 import DashboardTab from '../components/DashboardTab.vue'
 import MyWorkPlace from '../components/MyWorkPlace.vue'
+import AppLayout from '../layouts/AppLayout.vue';
 </script>
 
 <template>
   <div>
-    <app-layout>
+    <AppLayout>
       <template v-slot:main-content>
         <main class="min-h-screen w-full bg-[#F5F5F5] pl-[260px]">
           <AppHorizontalNavigation />
-          <AppVerticalNavigation />
-          <DashboardTab class="my-10 mx-10" />
-          <MyWorkPlace class="my-20 mx-10" />
+          <div>
+            <DashboardTab class="my-10 mx-5" />
+            <MyWorkPlace class="my-20 mx-5" />
+          </div>
+          <!-- <AppVerticalNavigation /> -->
         </main>
       </template>
-    </app-layout>
+    </AppLayout>
   </div>
 </template>

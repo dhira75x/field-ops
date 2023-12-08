@@ -1,6 +1,6 @@
 <template>
   <div
-    class="w-[1400px] h-[50px] px-[18px] py-2 bg-white rounded-sm shadow border border-zinc-300 items-center gap-[43px] inline-flex"
+    class="bg-white rounded-sm shadow border border-zinc-300 items-center inline-flex"
   >
     <div
       class="cursor-pointer"

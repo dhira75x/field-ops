@@ -12,8 +12,6 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
-    "vue": "^3.3.4",
-    "vue-router": "^4.2.5",
     "@bazumax/vue-multiselect": "^3.0.0-beta.3",
     "@fullcalendar/core": "^6.1.9",
     "@fullcalendar/daygrid": "^6.1.9",
@@ -24,9 +22,12 @@
     "axios": "^1.5.0",
     "chart.js": "^4.4.0",
     "chartjs": "^0.3.24",
+    "gauge-chart": "^1.0.0",
     "moment": "^2.29.4",
     "pinia": "^2.1.6",
-    "pinia-plugin-persistedstate": "^3.2.0"
+    "pinia-plugin-persistedstate": "^3.2.0",
+    "vue": "^3.3.4",
+    "vue-router": "^4.2.5"
   },
   "devDependencies": {
     "@nightwatch/vue": "0.4.5",

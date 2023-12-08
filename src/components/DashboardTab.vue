@@ -1,5 +1,5 @@
 <template>
-  <div class="grid grid-cols-2 w-full h-[51px] bg-white">
+  <div class="grid grid-cols-2 h-[51px] bg-white">
     <div class="flex max-w-sm">
       <div class="mx-2 flex justify-items-center">
         <img src="../assets/fi_chevron-left.svg" alt="" />

@@ -1,8 +1,8 @@
 <template>
   <div class="h-[930]">
-    <div class="h-[464px] w-screen">
+    <div class="h-[464px] ">
       <div>
-        <AssignmentDate7 class="w-screen" />
+        <AssignmentDate7 class="" />
       </div>
 
       <table

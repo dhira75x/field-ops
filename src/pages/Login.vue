@@ -1,64 +1,67 @@
 <script setup>
-import { ref } from 'vue'
-import { useRouter } from 'vue-router'
-import { useUserStore } from '@/stores/userStore'
-import workplaceRequests from '@/service/workplaceRequests.js'
+import { ref } from "vue";
+import { useRouter } from "vue-router";
+import { useUserStore } from "@/stores/userStore";
+import workplaceRequests from "@/service/workplaceRequests.js";
 
-const router = useRouter()
-const store = useUserStore()
-const notAuth = ref(false)
-const loginFailed = ref(false)
-const loading = ref(false)
-const email = ref('')
-const password = ref('')
+const router = useRouter();
+const store = useUserStore();
+const notAuth = ref(false);
+const loginFailed = ref(false);
+const loading = ref(false);
+const email = ref("");
+const password = ref("");
 
 const login = async () => {
   try {
     if (!email.value || !password.value || loading.value) {
-      return
+      return;
     }
 
-    loading.value = true
-    const { status, data } = await workplaceRequests('post', 'login', {
+    loading.value = true;
+    const { status, data } = await workplaceRequests("post", "login", {
       email: email.value,
-      password: password.value
-    })
+      password: password.value,
+    });
 
     if (status != 200) {
-      loginFailed.value = true
-      loading.value = false
-      setTimeout(() => (loginFailed.value = false), 4000)
+      loginFailed.value = true;
+      loading.value = false;
+      setTimeout(() => (loginFailed.value = false), 4000);
     }
-    if (data.data === 'undefined') {
-      loginFailed.value = true
-      loading.value = false
-      setTimeout(() => (loginFailed.value = false), 4000)
+    if (data.data === "undefined") {
+      loginFailed.value = true;
+      loading.value = false;
+      setTimeout(() => (loginFailed.value = false), 4000);
     }
 
     if (data.data != null && !store.hasRole(data.data?.role)) {
-      loading.value = false
-      store.updateIsAuthenicated(false)
-      notAuth.value = true
-      setTimeout(() => (notAuth.value = true), 3000)
-      alert(data.data.role + ' not permitted')
-      return
+      loading.value = false;
+      store.updateIsAuthenicated(false);
+      notAuth.value = true;
+      setTimeout(() => (notAuth.value = true), 3000);
+      alert(data.data.role + " not permitted");
+      return;
     }
-    let category = data.data?.category
-    if (category === 'BOTH' || category === 'LEGEND USER') {
-      loading.value = false
-      store.updateIsAuthenicated(true)
-      store.$state.token = data.token
-      store.$state.user = data.data
-      router.push({ name: 'home' })
-    } else if (status === 200 && (category === '' || category === 'SUBURBAN USER')) {
-      loading.value = false
-      store.updateIsAuthenicated(false)
-      notAuth.value = true
-      setTimeout(() => (notAuth.value = false), 3000)
-      alert('not a legend user')
+    let category = data.data?.category;
+    if (category === "BOTH" || category === "LEGEND USER") {
+      loading.value = false;
+      store.updateIsAuthenicated(true);
+      store.$state.token = data.token;
+      store.$state.user = data.data;
+      router.push({ name: "home" });
+    } else if (
+      status === 200 &&
+      (category === "" || category === "SUBURBAN USER")
+    ) {
+      loading.value = false;
+      store.updateIsAuthenicated(false);
+      notAuth.value = true;
+      setTimeout(() => (notAuth.value = false), 3000);
+      alert("not a legend user");
     }
   } catch (e) {
-    alert(e.message)
+    alert(e.message);
   }
 
   // if (status === 401) {
@@ -66,7 +69,7 @@ const login = async () => {
   //   loading.value = false
   //   setTimeout(() => (loginFailed.value = false), 4000)
   // }
-}
+};
 </script>
 
 <template>
@@ -86,7 +89,10 @@ const login = async () => {
     </div>
     <img src="@/assets/legend.svg" alt="Legend home page" />
 
-    <form class="bg-gradient-to-l mt-8 w-full bg-white px-20 py-14 shadow-md" @submit.prevent="login">
+    <form
+      class="bg-gradient-to-l mt-8 w-full bg-white px-20 py-14 shadow-md"
+      @submit.prevent="login"
+    >
       <h1 class="mb-2 text-center text-2xl font-bold">WorkPlace</h1>
       <p class="mb-8 text-center">Enter your credentials below</p>
       <div class="my-6 w-[369px]">
@@ -114,7 +120,7 @@ const login = async () => {
         </div>
         <!-- <a href="#">Recover Password?</a> -->
       </div>
-      <router-link to="/pages/MyWorkPlace">
+      <!-- <router-link to="/pages/MyWorkPlace"> -->
         <button
           type="submit"
           :value="loading ? 'Loading...' : 'Login'"
@@ -124,7 +130,7 @@ const login = async () => {
         >
           Login
         </button>
-      </router-link>
+      <!-- </router-link> -->
     </form>
   </main>
 </template>

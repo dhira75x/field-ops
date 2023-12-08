@@ -1,5 +1,5 @@
 <script setup>
-import VerticalNavigation from '@/components/AppVerticalNavigation.vue'
+import VerticalNavigation from "@/components/AppVerticalNavigation.vue";
 </script>
 
 <template>

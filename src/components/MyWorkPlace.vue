@@ -1,17 +1,17 @@
 <template>
-  <div class="w-full h-[1200px] bg-white">
+  <section class="bg-white">
     <div class="mb-4 bg-gray-200">
-      <nav
-        class="mt-1 p-2 border text-black-300 w-full flex flex-row rounded-md"
-      >
+      <nav class="mt-1 p-2 border text-black-300 rounded-md">
         <div class="grid grid-cols-1">
           <div class="font-bold font-[Source Sans Pro] text-[25px]">
             Operational Readiness Reading
           </div>
-          <div class="font-normal font-[Source Sans Pro]">29/11/2023</div>
+          <div class="font-normal font-[Source Sans Pro]">
+            29/11/2023
+          </div>
         </div>
-        <div
-          class="text-black text-base font-normal font-['Source Sans Pro'] w-[15px] h-[15px] text-center flex flex-row-reverse mr-10 gap-[89px]"
+        <!-- <div
+          class="text-black text-base font-normal font-['Source Sans Pro'] w-[15px] h-[15px] text-center mr-10 gap-[89px]"
         >
           <button
             id="dropdownDefaultButton"
@@ -36,8 +36,6 @@
               />
             </svg>
           </button>
-
-          <!-- Dropdown menu -->
           <div
             id="dropdown"
             class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-24 dark:bg-gray-700"
@@ -76,13 +74,18 @@
               </li>
             </ul>
           </div>
-        </div>
+        </div> -->
       </nav>
     </div>
     <div class="w-full h-[600px]">
       <div class="grid grid-cols-4 border-b border-b-gray-300 mx-3 my-3">
         <div class="mb-4 my-8">
-          <img src="../assets/curve.svg" />
+          <GaugeChart
+            :size="300"
+            :id="`gaugeChart${1}`"
+            department=""
+            :gauge="90"
+          />
         </div>
         <div class="grid grid-cols-1 justify-items-end my-8">
           <div class="font-normal mx-3 mb-6">28/11/2023</div>
@@ -151,17 +154,17 @@
         </div>
       </div>
 
-      <div v-for="(item, index) in dataList" :key="index" class="w-full my-20 justify-center">
-        <!-- <form class="w-full h-[2300px] flex-col justify-start items-center gap-[15px] inline-flex"> -->
-        <div 
-          class="shadow-2xl w-full py-10  mx-28 px-10 justify-items-center"
-        >
+      <div
+        v-for="(item, index) in dataList"
+        :key="index"
+      >
+        <div class="shadow-2xl py-10 mx-10 my-10 justify-items-center">
           <div class="flex flex-row">
             <div class="w-3/12 cursor-pointer">
-              <input type="checkbox" class="w-[40px] h-[40px]" />
+              <input type="checkbox" class="w-full h-[40px]" />
             </div>
 
-            <div class="w-6/12 justify-start">
+            <div class="w-6/12">
               <div class="font-light font-['Source Sans Pro']">
                 {{ item.tag }}
               </div>
@@ -171,8 +174,8 @@
             </div>
 
             <div
-              @click="dataList[index].opened=!dataList[index].opened"
-              class="text-[black] w-3/12 items-center my-11 absolute left-[1380px]"
+              @click="dataList[index].opened = !dataList[index].opened"
+              class="text-[black] w-3/12 flex flex-row-reverse mx-20 my-11"
               id="dropdownDefaultCheckbox"
               data-dropdown-toggle="dropdownDefaultCheckbox"
             >
@@ -193,208 +196,30 @@
               </svg>
             </div>
           </div>
-          <div class="my-10  text-black">
-            <CheckList v-if="item.opened" class="my-10 py-10" :checklists="item.questions" />
+          <div v-if="item.opened" class="my-10 mx-24 text-black">
+            <CheckList
+              class=""
+              :checklists="item.questions"
+            />
           </div>
         </div>
-        <!-- <div
-          class="shadow-2xl w-full h-[250px] mx-28 my-16 justify-items-center"
-        >
-          <div class="flex flex-row">
-            <div class="mx-8 my-24">
-              <svg
-                width="102"
-                height="46"
-                viewBox="0 0 102 46"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <rect
-                  x="1"
-                  y="1"
-                  width="44"
-                  height="44"
-                  rx="5"
-                  stroke="#CCCCCC"
-                  stroke-width="2"
-                />
-              </svg>
-            </div>
-
-            <div class="my-20 justify-start">
-              <div class="font-light font-['Source Sans Pro']">
-                OPERATIONAL CHECKLIST
-              </div>
-              <div class="font-semibold font-['Source Sans Pro']">
-                Schedule Checklist
-              </div>
-            </div>
-
-            <button
-              @click="visibilityToggle"
-              class="text-[black] items-center my-11 absolute left-[1380px]"
-              id="dropdownDefaultCheckbox"
-              data-dropdown-toggle="dropdownDefaultCheckbox"
-            >
-              <svg
-                width="28"
-                height="14"
-                viewBox="0 0 28 14"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M25 1L13 13L1 1"
-                  stroke="black"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-            </button>
-            <div>
-              <CheckList />
-            </div>
-          </div>
-        </div>
-        <div
-          class="shadow-2xl w-full h-[250px] mx-28 my-16 justify-items-center"
-        >
-          <div class="flex flex-row">
-            <div class="mx-8 my-24">
-              <svg
-                width="102"
-                height="46"
-                viewBox="0 0 102 46"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <rect
-                  x="1"
-                  y="1"
-                  width="44"
-                  height="44"
-                  rx="5"
-                  stroke="#CCCCCC"
-                  stroke-width="2"
-                />
-              </svg>
-            </div>
-
-            <div class="my-20 justify-start">
-              <div class="font-light font-['Source Sans Pro']">
-                OPERATIONAL CHECKLIST
-              </div>
-              <div class="font-semibold font-['Source Sans Pro']">
-                Schedule Checklist
-              </div>
-            </div>
-
-            <button
-              @click="visibilityToggle"
-              class="text-[black] items-center my-11 absolute left-[1380px]"
-              id="dropdownDefaultCheckbox"
-              data-dropdown-toggle="dropdownDefaultCheckbox"
-            >
-              <svg
-                width="28"
-                height="14"
-                viewBox="0 0 28 14"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M25 1L13 13L1 1"
-                  stroke="black"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-            </button>
-            <div>
-              <CheckList />
-            </div>
-          </div>
-        </div>
-        <div
-          class="shadow-2xl w-full h-[250px] mx-28 my-16 justify-items-center"
-        >
-          <div class="flex flex-row">
-            <div class="mx-8 my-24">
-              <svg
-                width="102"
-                height="46"
-                viewBox="0 0 102 46"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <rect
-                  x="1"
-                  y="1"
-                  width="44"
-                  height="44"
-                  rx="5"
-                  stroke="#CCCCCC"
-                  stroke-width="2"
-                />
-              </svg>
-            </div>
-
-            <div class="my-20 justify-start">
-              <div class="font-light font-['Source Sans Pro']">
-                OPERATIONAL CHECKLIST
-              </div>
-              <div class="font-semibold font-['Source Sans Pro']">
-                Schedule Checklist
-              </div>
-            </div>
-
-            <button
-              @click="visibilityToggle"
-              type="button"
-              class="text-[black] items-center my-11 absolute left-[1380px]"
-              id="dropdownDefaultCheckbox"
-              data-dropdown-toggle="dropdownDefaultCheckbox"
-            >
-              <svg
-                width="28"
-                height="14"
-                viewBox="0 0 28 14"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M25 1L13 13L1 1"
-                  stroke="black"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-            </button>
-            <div>
-              <CheckList />
-            </div>
-          </div>
-        </div> -->
-        <!-- </form> -->
       </div>
     </div>
-  </div>
+  </section>
 </template>
 <script setup>
 import { ref } from "vue";
+import AppLayout from "@/layouts/AppLayout.vue";
 import CheckList from "./CheckList.vue";
-
-
+import GaugeChart from "@/components/GaugeChart.vue";
+import HorizontalNavigation from "@/components/AppHorizontalNavigation.vue";
 const isVisible = ref(true);
 
 const dataList = ref([
   {
     tag: "OPERATION CHECKLIST",
     description: "Equipment & Material checklist",
-    opened:false,
+    opened: false,
     questions: [
       "Ask For Permission to record the session",
       "Ask For Permission to record the session",
@@ -406,7 +231,7 @@ const dataList = ref([
   {
     tag: "OPERATION CHECKLIST",
     description: "Task checklist",
-    opened:false,
+    opened: false,
     questions: [
       "Ask For Permission to record the session",
       "Ask For Permission to record the session",
@@ -418,7 +243,7 @@ const dataList = ref([
   {
     tag: "OPERATION CHECKLIST",
     description: "Transportation & Logistics checklist",
-    opened:false,
+    opened: false,
     questions: [
       "Ask For Permission to record the session",
       "Ask For Permission to record the session",
@@ -430,7 +255,7 @@ const dataList = ref([
   {
     tag: "OPERATION CHECKLIST",
     description: "Schedule checklist",
-    opened:false,
+    opened: false,
     questions: [
       "Ask For Permission to record the session",
       "Ask For Permission to record the session",
@@ -447,7 +272,7 @@ const visibilityToggle = () => {
 </script>
 
 <style scope>
-  .hidden{
-    display: none;
-  }
+.hidden {
+  display: none;
+}
 </style>
