@@ -1,5 +1,35 @@
 <template>
-  <div class="shadow-lg w-[970px] h-[120px] my-8 mx-24">
+  <div
+    v-for="(item, index) in props.checklists"
+    :key="index"
+    class=""
+  >
+<div>
+  <input
+    id="checkbox-item-1"
+    type="checkbox"
+    value=""
+    class="w-10 h-10 mx-10 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
+  />
+  <label
+    for="checkbox-item-1"
+    class="ms-2 text-sm font-medium text-black dark:text-gray-300"
+    >Ask for permission to record the session</label
+  >
+</div>
+    <div class="w-full flex items-center">
+      <label for="comment" class="block text-sm font-medium text-gray-600"
+        >Comments</label
+      >
+      <textarea
+        id="comment"
+        name="comment"
+        rows="3"
+        class="mt-1 p-2 border w-full rounded-md"
+      ></textarea>
+    </div>
+  </div>
+  <!-- <div class="shadow-lg w-[970px] h-[120px] my-8 mx-24">
     <div
       id="dropdownDefaultCheckbox"
       class="z-10 hidden w-48 bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600"
@@ -14,11 +44,11 @@
               id="checkbox-item-1"
               type="checkbox"
               value=""
-              class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
+              class="w-5 h-5 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
             />
             <label
               for="checkbox-item-1"
-              class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+              class="ms-2 text-sm font-medium text-black dark:text-gray-300"
               >Ask for permission to record the session</label
             >
           </div>
@@ -80,5 +110,9 @@
         </div>
       </ul>
     </div>
-  </div>
+  </div> -->
 </template>
+
+<script setup>
+const props = defineProps(["checklists"]);
+</script>

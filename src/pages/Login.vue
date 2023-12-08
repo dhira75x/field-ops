@@ -2,7 +2,7 @@
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { useUserStore } from '@/stores/userStore'
-import workplaceRequests from '@/service/workplaceRequests'
+import workplaceRequests from '@/service/workplaceRequests.js'
 
 const router = useRouter()
 const store = useUserStore()

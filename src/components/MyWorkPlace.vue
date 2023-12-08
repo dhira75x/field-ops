@@ -1,7 +1,9 @@
 <template>
   <div class="w-full h-[1200px] bg-white">
     <div class="mb-4 bg-gray-200">
-      <nav class="mt-1 p-2 border text-black-300 w-full flex flex-row rounded-md">
+      <nav
+        class="mt-1 p-2 border text-black-300 w-full flex flex-row rounded-md"
+      >
         <div class="grid grid-cols-1">
           <div class="font-bold font-[Source Sans Pro] text-[25px]">
             Operational Readiness Reading
@@ -89,270 +91,363 @@
           <div class="font-normal mx-3 mb-6">01/12/2023</div>
         </div>
         <div class="grid grid-cols-1 my-8 justify-items-center">
-          <div class="w-[165px] h-[13px] bg-gray-200 rounded-full dark:bg-green-700">
-            <div class="bg-green-600 h-2.5 rounded-full" style="width: 100%"></div>
+          <div
+            class="w-[165px] h-[13px] bg-gray-200 rounded-full dark:bg-green-700"
+          >
+            <div
+              class="bg-green-600 h-2.5 rounded-full"
+              style="width: 100%;"
+            ></div>
           </div>
 
-          <div class="w-[165px] h-[13px] bg-gray-200 rounded-full dark:bg-green-700">
-            <div class="bg-green-600 h-2.5 rounded-full" style="width: 100%"></div>
+          <div
+            class="w-[165px] h-[13px] bg-gray-200 rounded-full dark:bg-green-700"
+          >
+            <div
+              class="bg-green-600 h-2.5 rounded-full"
+              style="width: 100%;"
+            ></div>
           </div>
 
-          <div class="w-[165px] h-[13px] bg-gray-200 rounded-full dark:bg-green-700">
-            <div class="bg-green-600 h-2.5 rounded-full" style="width: 100%"></div>
+          <div
+            class="w-[165px] h-[13px] bg-gray-200 rounded-full dark:bg-green-700"
+          >
+            <div
+              class="bg-green-600 h-2.5 rounded-full"
+              style="width: 100%;"
+            ></div>
           </div>
 
-          <div class="w-[165px] h-[13px] bg-gray-200 rounded-full dark:bg-green-700">
-            <div class="bg-green-600 h-2.5 rounded-full" style="width: 100%"></div>
+          <div
+            class="w-[165px] h-[13px] bg-gray-200 rounded-full dark:bg-green-700"
+          >
+            <div
+              class="bg-green-600 h-2.5 rounded-full"
+              style="width: 100%;"
+            ></div>
           </div>
         </div>
         <div class="mb-16 grid grid-cols-1 text-[white]">
-          <button class="mx-3 mb-6 bg-slate-700 text-center w-[150px] h-[58px] rounded-lg">
+          <button
+            class="mx-3 mb-6 bg-slate-700 text-center w-[150px] h-[58px] rounded-lg"
+          >
             Approved
           </button>
-          <button class="mx-3 mb-6 bg-slate-700 text-center w-[150px] h-[58px] rounded-lg">
+          <button
+            class="mx-3 mb-6 bg-slate-700 text-center w-[150px] h-[58px] rounded-lg"
+          >
             Approved
           </button>
-          <button class="mx-3 mb-6 bg-slate-700 text-center w-[150px] h-[58px] rounded-lg">
+          <button
+            class="mx-3 mb-6 bg-slate-700 text-center w-[150px] h-[58px] rounded-lg"
+          >
             Approved
           </button>
-          <button class="mx-3 mb-6 bg-slate-700 text-center w-[150px] h-[58px] rounded-lg">
+          <button
+            class="mx-3 mb-6 bg-slate-700 text-center w-[150px] h-[58px] rounded-lg"
+          >
             Approved
           </button>
         </div>
       </div>
 
-      <div class="w-full my-20 justify-center">
-        <form class="w-full h-[2300px] flex-col justify-start items-center gap-[15px] inline-flex">
-          <div class="shadow-2xl w-full h-[250px] mx-28 justify-items-center">
-            <div class="flex flex-row">
-              <div class="mx-8 my-24 cursor-pointer">
-                <svg
-                  width="102"
-                  height="46"
-                  viewBox="0 0 102 46"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <rect
-                    x="1"
-                    y="1"
-                    width="44"
-                    height="44"
-                    rx="5"
-                    stroke="#CCCCCC"
-                    stroke-width="2"
-                  />
-                </svg>
-              </div>
+      <div v-for="(item, index) in dataList" :key="index" class="w-full my-20 justify-center">
+        <!-- <form class="w-full h-[2300px] flex-col justify-start items-center gap-[15px] inline-flex"> -->
+        <div 
+          class="shadow-2xl w-full py-10  mx-28 px-10 justify-items-center"
+        >
+          <div class="flex flex-row">
+            <div class="w-3/12 cursor-pointer">
+              <input type="checkbox" class="w-[40px] h-[40px]" />
+            </div>
 
-              <div class="my-20 justify-start">
-                <div class="font-light font-['Source Sans Pro']">OPERATIONAL CHECKLIST</div>
-                <div class="font-semibold font-['Source Sans Pro']">
-                  Transport and Logistics Checklist
-                </div>
+            <div class="w-6/12 justify-start">
+              <div class="font-light font-['Source Sans Pro']">
+                {{ item.tag }}
               </div>
-
-              <button
-                @click="visibilityToggle"
-                class="text-[black] items-center my-11 absolute left-[1380px]"
-                id="dropdownDefaultCheckbox"
-                data-dropdown-toggle="dropdownDefaultCheckbox"
-              >
-                <svg
-                  width="28"
-                  height="14"
-                  viewBox="0 0 28 14"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M25 1L13 13L1 1"
-                    stroke="black"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </button>
-              <div>
-                <CheckList />
+              <div class="font-semibold font-['Source Sans Pro']">
+                {{ item.description }}
               </div>
             </div>
-          </div>
-          <div class="shadow-2xl w-full h-[250px] mx-28 my-16 justify-items-center">
-            <div class="flex flex-row">
-              <div class="mx-8 my-24">
-                <svg
-                  width="102"
-                  height="46"
-                  viewBox="0 0 102 46"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <rect
-                    x="1"
-                    y="1"
-                    width="44"
-                    height="44"
-                    rx="5"
-                    stroke="#CCCCCC"
-                    stroke-width="2"
-                  />
-                </svg>
-              </div>
 
-              <div class="my-20 justify-start">
-                <div class="font-light font-['Source Sans Pro']">OPERATIONAL CHECKLIST</div>
-                <div class="font-semibold font-['Source Sans Pro']">Schedule Checklist</div>
-              </div>
-
-              <button
-                @click="visibilityToggle"
-                class="text-[black] items-center my-11 absolute left-[1380px]"
-                id="dropdownDefaultCheckbox"
-                data-dropdown-toggle="dropdownDefaultCheckbox"
+            <div
+              @click="dataList[index].opened=!dataList[index].opened"
+              class="text-[black] w-3/12 items-center my-11 absolute left-[1380px]"
+              id="dropdownDefaultCheckbox"
+              data-dropdown-toggle="dropdownDefaultCheckbox"
+            >
+              <svg
+                width="28"
+                height="14"
+                viewBox="0 0 28 14"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <svg
-                  width="28"
-                  height="14"
-                  viewBox="0 0 28 14"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M25 1L13 13L1 1"
-                    stroke="black"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </button>
-              <div>
-                <CheckList />
-              </div>
+                <path
+                  d="M25 1L13 13L1 1"
+                  stroke="black"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
             </div>
           </div>
-          <div class="shadow-2xl w-full h-[250px] mx-28 my-16 justify-items-center">
-            <div class="flex flex-row">
-              <div class="mx-8 my-24">
-                <svg
-                  width="102"
-                  height="46"
-                  viewBox="0 0 102 46"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <rect
-                    x="1"
-                    y="1"
-                    width="44"
-                    height="44"
-                    rx="5"
-                    stroke="#CCCCCC"
-                    stroke-width="2"
-                  />
-                </svg>
-              </div>
-
-              <div class="my-20 justify-start">
-                <div class="font-light font-['Source Sans Pro']">OPERATIONAL CHECKLIST</div>
-                <div class="font-semibold font-['Source Sans Pro']">Schedule Checklist</div>
-              </div>
-
-              <button
-                @click="visibilityToggle"
-                class="text-[black] items-center my-11 absolute left-[1380px]"
-                id="dropdownDefaultCheckbox"
-                data-dropdown-toggle="dropdownDefaultCheckbox"
+          <div class="my-10  text-black">
+            <CheckList v-if="item.opened" class="my-10 py-10" :checklists="item.questions" />
+          </div>
+        </div>
+        <!-- <div
+          class="shadow-2xl w-full h-[250px] mx-28 my-16 justify-items-center"
+        >
+          <div class="flex flex-row">
+            <div class="mx-8 my-24">
+              <svg
+                width="102"
+                height="46"
+                viewBox="0 0 102 46"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <svg
-                  width="28"
-                  height="14"
-                  viewBox="0 0 28 14"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M25 1L13 13L1 1"
-                    stroke="black"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </button>
-              <div>
-                <CheckList />
+                <rect
+                  x="1"
+                  y="1"
+                  width="44"
+                  height="44"
+                  rx="5"
+                  stroke="#CCCCCC"
+                  stroke-width="2"
+                />
+              </svg>
+            </div>
+
+            <div class="my-20 justify-start">
+              <div class="font-light font-['Source Sans Pro']">
+                OPERATIONAL CHECKLIST
+              </div>
+              <div class="font-semibold font-['Source Sans Pro']">
+                Schedule Checklist
               </div>
             </div>
-          </div>
-          <div class="shadow-2xl w-full h-[250px] mx-28 my-16 justify-items-center">
-            <div class="flex flex-row">
-              <div class="mx-8 my-24">
-                <svg
-                  width="102"
-                  height="46"
-                  viewBox="0 0 102 46"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <rect
-                    x="1"
-                    y="1"
-                    width="44"
-                    height="44"
-                    rx="5"
-                    stroke="#CCCCCC"
-                    stroke-width="2"
-                  />
-                </svg>
-              </div>
 
-              <div class="my-20 justify-start">
-                <div class="font-light font-['Source Sans Pro']">OPERATIONAL CHECKLIST</div>
-                <div class="font-semibold font-['Source Sans Pro']">Schedule Checklist</div>
-              </div>
-
-              <button
-                @click="visibilityToggle"
-                class="text-[black] items-center my-11 absolute left-[1380px]"
-                id="dropdownDefaultCheckbox"
-                data-dropdown-toggle="dropdownDefaultCheckbox"
+            <button
+              @click="visibilityToggle"
+              class="text-[black] items-center my-11 absolute left-[1380px]"
+              id="dropdownDefaultCheckbox"
+              data-dropdown-toggle="dropdownDefaultCheckbox"
+            >
+              <svg
+                width="28"
+                height="14"
+                viewBox="0 0 28 14"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <svg
-                  width="28"
-                  height="14"
-                  viewBox="0 0 28 14"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M25 1L13 13L1 1"
-                    stroke="black"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </button>
-              <div>
-                <CheckList />
-              </div>
+                <path
+                  d="M25 1L13 13L1 1"
+                  stroke="black"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+            <div>
+              <CheckList />
             </div>
           </div>
-        </form>
+        </div>
+        <div
+          class="shadow-2xl w-full h-[250px] mx-28 my-16 justify-items-center"
+        >
+          <div class="flex flex-row">
+            <div class="mx-8 my-24">
+              <svg
+                width="102"
+                height="46"
+                viewBox="0 0 102 46"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect
+                  x="1"
+                  y="1"
+                  width="44"
+                  height="44"
+                  rx="5"
+                  stroke="#CCCCCC"
+                  stroke-width="2"
+                />
+              </svg>
+            </div>
+
+            <div class="my-20 justify-start">
+              <div class="font-light font-['Source Sans Pro']">
+                OPERATIONAL CHECKLIST
+              </div>
+              <div class="font-semibold font-['Source Sans Pro']">
+                Schedule Checklist
+              </div>
+            </div>
+
+            <button
+              @click="visibilityToggle"
+              class="text-[black] items-center my-11 absolute left-[1380px]"
+              id="dropdownDefaultCheckbox"
+              data-dropdown-toggle="dropdownDefaultCheckbox"
+            >
+              <svg
+                width="28"
+                height="14"
+                viewBox="0 0 28 14"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M25 1L13 13L1 1"
+                  stroke="black"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+            <div>
+              <CheckList />
+            </div>
+          </div>
+        </div>
+        <div
+          class="shadow-2xl w-full h-[250px] mx-28 my-16 justify-items-center"
+        >
+          <div class="flex flex-row">
+            <div class="mx-8 my-24">
+              <svg
+                width="102"
+                height="46"
+                viewBox="0 0 102 46"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect
+                  x="1"
+                  y="1"
+                  width="44"
+                  height="44"
+                  rx="5"
+                  stroke="#CCCCCC"
+                  stroke-width="2"
+                />
+              </svg>
+            </div>
+
+            <div class="my-20 justify-start">
+              <div class="font-light font-['Source Sans Pro']">
+                OPERATIONAL CHECKLIST
+              </div>
+              <div class="font-semibold font-['Source Sans Pro']">
+                Schedule Checklist
+              </div>
+            </div>
+
+            <button
+              @click="visibilityToggle"
+              type="button"
+              class="text-[black] items-center my-11 absolute left-[1380px]"
+              id="dropdownDefaultCheckbox"
+              data-dropdown-toggle="dropdownDefaultCheckbox"
+            >
+              <svg
+                width="28"
+                height="14"
+                viewBox="0 0 28 14"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M25 1L13 13L1 1"
+                  stroke="black"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+            <div>
+              <CheckList />
+            </div>
+          </div>
+        </div> -->
+        <!-- </form> -->
       </div>
     </div>
   </div>
 </template>
 <script setup>
-import { ref } from 'vue'
-import CheckList from './CheckList.vue'
+import { ref } from "vue";
+import CheckList from "./CheckList.vue";
 
-const isVisible = ref(true)
+
+const isVisible = ref(true);
+
+const dataList = ref([
+  {
+    tag: "OPERATION CHECKLIST",
+    description: "Equipment & Material checklist",
+    opened:false,
+    questions: [
+      "Ask For Permission to record the session",
+      "Ask For Permission to record the session",
+      "Ask For Permission to record the session",
+      "Ask For Permission to record the session",
+      "Ask For Permission to record the session",
+    ],
+  },
+  {
+    tag: "OPERATION CHECKLIST",
+    description: "Task checklist",
+    opened:false,
+    questions: [
+      "Ask For Permission to record the session",
+      "Ask For Permission to record the session",
+      "Ask For Permission to record the session",
+      "Ask For Permission to record the session",
+      "Ask For Permission to record the session",
+    ],
+  },
+  {
+    tag: "OPERATION CHECKLIST",
+    description: "Transportation & Logistics checklist",
+    opened:false,
+    questions: [
+      "Ask For Permission to record the session",
+      "Ask For Permission to record the session",
+      "Ask For Permission to record the session",
+      "Ask For Permission to record the session",
+      "Ask For Permission to record the session",
+    ],
+  },
+  {
+    tag: "OPERATION CHECKLIST",
+    description: "Schedule checklist",
+    opened:false,
+    questions: [
+      "Ask For Permission to record the session",
+      "Ask For Permission to record the session",
+      "Ask For Permission to record the session",
+      "Ask For Permission to record the session",
+      "Ask For Permission to record the session",
+    ],
+  },
+]);
 
 const visibilityToggle = () => {
-  isVisible.value = !isVisible.value
-}
+  isVisible.value = !isVisible.value;
+};
 </script>
+
+<style scope>
+  .hidden{
+    display: none;
+  }
+</style>
