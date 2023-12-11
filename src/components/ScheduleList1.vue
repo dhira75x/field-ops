@@ -1,12 +1,16 @@
 <template>
   <div class="h-[930]">
-    <div class="h-[464px] ">
-      <div>
-        <AssignmentDate7 class="" />
+    <div class=" mb-10" v-for="(item, index) in restructureData" :key="index">
+      <div class="">
+        <AssignmentDate7
+          :data="item.label"
+          :count="item?.values?.length"
+          class="px-10"
+        />
       </div>
 
       <table
-        class="bg-[#ffffff] rounded-[5px] h-[457px]"
+        class="bg-[#ffffff] rounded-[5px] px-10"
         style="
           box-shadow: var(
             --card-shadow-box-shadow,
@@ -15,7 +19,7 @@
         "
       >
         <thead
-          class="text-legend-black text-left uppercase w-6 h-[65px]"
+          class="text-legend-black text-left uppercase w-6"
           style="font: 700 12px/15px 'SourceSansPro-Bold', sans-serif;"
         >
           <tr>
@@ -32,7 +36,7 @@
           </tr>
         </thead>
         <tbody
-          class="rounded-[5px] h-[457px]"
+          class="rounded-[5px]"
           style="
             box-shadow: var(
               --card-shadow-box-shadow,
@@ -41,24 +45,26 @@
           "
         >
           <tr
-            class="text-legend-black text-left w-6 h-[65px]"
+            v-for="(it, i) in item.values"
+            :key="i"
+            class="text-legend-black text-left w-6"
             style="font: 700 12px/15px 'SourceSansPro-Bold', sans-serif;"
           >
             <td
               class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-blue-200 dark:text-black"
               scope="row"
             >
-              01
+              {{ it.id }}
             </td>
-            <td class="px-6 py-4 bg-blue-200">Anthony Adeyi</td>
+            <td class="px-6 py-4 bg-blue-200">{{ it.customer_name }}</td>
             <td class="px-6 py-4 bg-blue-200">
-              15 Malcolm Fraser Street,Asokoro, Abuja
+              {{ it.address }}
             </td>
-            <td class="px-6 py-4 bg-blue-200">081848849663</td>
-            <td class="px-6 py-4 bg-blue-200">Fault Provisioning</td>
-            <td class="px-6 py-4 bg-blue-200">10:30:00</td>
-            <td class="px-6 py-4 bg-blue-200">11:30:00</td>
-            <td class="px-6 py-4 bg-blue-200">Completed</td>
+            <td class="px-6 py-4 bg-blue-200">{{ it.phone_number }}</td>
+            <td class="px-6 py-4 bg-blue-200">{{ it.activity }}</td>
+            <td class="px-6 py-4 bg-blue-200">{{ it.request_date }}</td>
+            <td class="px-6 py-4 bg-blue-200">{{ it.exp_start_date }}</td>
+            <td class="px-6 py-4 bg-blue-200">{{ it.status }}</td>
             <td class="bg-blue-200">
               <router-link to="/pages/ResourceDiagnosis">
                 <a>View Resources</a>
@@ -75,7 +81,7 @@
               >
             </td>
           </tr>
-          <tr
+          <!-- <tr
             class="text-black text-left w-[130.28px] h-14"
             style="font: 400 12px/15px 'SourceSansPro-Regular', sans-serif;"
           >
@@ -319,7 +325,7 @@
                 >Upload Report</a
               >
             </td>
-          </tr>
+          </tr> -->
         </tbody>
       </table>
       <AppModal
@@ -355,6 +361,24 @@ import YesFaultConfirmationAct from "../pages/YesFaultConfirmationAct.vue";
 import YesFaultConfirmation from "../pages/YesFaultConfirmation.vue";
 import AssignmentDate7 from "./AssignmentDate7.vue";
 
+const restructureData = ref([
+  {
+    label: "",
+    values: [
+      {
+        id: null,
+        customer_name: "",
+        address: "",
+        phone_number: "",
+        request_date: "",
+        activity: "",
+        exp_start_date: "",
+        end_date: "",
+        status: "",
+      },
+    ],
+  },
+]);
 onMounted(() => {
   getSchedules();
 });
@@ -366,7 +390,11 @@ const getSchedules = async () => {
       "operations/sd/installer/schedules"
     );
     if (status == 200) {
-      schedules.value = data.data.results.data;
+      schedules.value = data.data.data;
+      restructureData.value = Object.entries(schedules.value).map((v, k) => {
+        return { label: v[0], values: v[1] };
+      });
+      console.log(restructureData.value);
     }
   } catch (e) {
     alert(e.message);

@@ -16,11 +16,11 @@
           />
           </div>
           <div v-if="activeTab == 1">
-            <ScheduleList1 class="m-10" />
+            <ScheduleList1 class="mx-10" />
           </div>
-          <div v-if="activeTab == 1">
+          <!-- <div v-if="activeTab == 1">
             <ScheduleList2 class="mx-10 my-36" />
-          </div>
+          </div> -->
           <div v-if="activeTab == 2" class="my-10">
             <ObligationConfirmationList></ObligationConfirmationList>
           </div>
