@@ -103,3 +103,22 @@
     </div>
   </div>
 </template>
+
+<script setup>
+import { onMounted, ref,  } from "vue";
+import workplaceRequestsv2 from "@/service/workplaceRequestsv2.js";
+import { useRoute } from "vue-router";
+const route=useRoute();
+onMounted(()=>{
+  getReport();
+})
+  const getReport=async ()=>{
+    try{
+      const { status, data } = await workplaceRequestsv2(
+      "get",
+      `network/maintenance/maintencance-diagnosis-reports/${route.params.id}`
+    );
+    if (status == 200) { /* empty */ }
+    }catch(e){ /* empty */ }
+  }
+</script>

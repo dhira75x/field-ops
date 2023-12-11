@@ -79,13 +79,13 @@ const router = createRouter({
     },
 
     {
-      path: '/pages/ResourceSplicePlan',
+      path: '/pages/ResourceSplicePlan/:id',
       name: 'ResourceSplicePlan',
       component: ResourceSplicePlan
     },
 
     {
-      path: '/pages/ResourceWorkOrder',
+      path: '/pages/ResourceWorkOrder/:id',
       name: 'ResourceWorkOrder',
       component: ResourceWorkOrder
     },
@@ -108,7 +108,7 @@ const router = createRouter({
       component: ObligationConfirmations
     },
     {
-      path: '/pages/ResourceDiagnosis',
+      path: '/pages/ResourceDiagnosis/:id',
       name: 'ResourceDiagnosis',
       component: ResourceDiagnosis
     },

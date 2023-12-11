@@ -1,6 +1,6 @@
 <template>
   <div class="h-[930]">
-    <div class=" mb-10" v-for="(item, index) in restructureData" :key="index">
+    <div class="mb-10" v-for="(item, index) in restructureData" :key="index">
       <div class="">
         <AssignmentDate7
           :data="item.label"
@@ -66,8 +66,10 @@
             <td class="px-6 py-4 bg-blue-200">{{ it.exp_start_date }}</td>
             <td class="px-6 py-4 bg-blue-200">{{ it.status }}</td>
             <td class="bg-blue-200">
-              <router-link to="/pages/ResourceDiagnosis">
-                <a>View Resources</a>
+              <router-link
+                :to="{ name: 'ResourceDiagnosis', params: { id: it.id } }"
+              >
+                View Resources
               </router-link>
             </td>
             <td class="bg-blue-200">
@@ -328,6 +330,11 @@
           </tr> -->
         </tbody>
       </table>
+      <AppPagination
+        class="mt-10"
+        @@fetchRecords="getSchedules"
+        :pagination="pagination"
+      />
       <AppModal
         v-if="showYesFaultConfirmationModal"
         @click="showYesFaultConfirmationModal = !showYesFaultConfirmationModal"
@@ -350,51 +357,60 @@
   </div>
 </template>
 <script setup>
-import { onMounted, ref } from "vue";
-const showYesFaultConfirmationModal = ref(false);
-const showYesFaultConfirmationActModal = ref(false);
+import { onMounted, ref, computed } from "vue";
 import workplaceRequestsv2 from "../service/workplaceRequestsv2.js";
-//import { ref } from 'vue'
-//import { useRouter } from 'vue-router'
 import AppModal from "../components/AppModal.vue";
 import YesFaultConfirmationAct from "../pages/YesFaultConfirmationAct.vue";
 import YesFaultConfirmation from "../pages/YesFaultConfirmation.vue";
 import AssignmentDate7 from "./AssignmentDate7.vue";
+import AppPagination from "@/components/AppPagination.vue";
 
+const showYesFaultConfirmationModal = ref(false);
+const showYesFaultConfirmationActModal = ref(false);
+const from = ref(0);
+const to = ref(0);
+const pages = ref(1);
+const total = ref(0);
+const current = ref(1);
+const recordsPerPage = ref(20);
 const restructureData = ref([
   {
     label: "",
-    values: [
-      {
-        id: null,
-        customer_name: "",
-        address: "",
-        phone_number: "",
-        request_date: "",
-        activity: "",
-        exp_start_date: "",
-        end_date: "",
-        status: "",
-      },
-    ],
+    values: [],
   },
 ]);
 onMounted(() => {
-  getSchedules();
+  getSchedules(current.value);
 });
+
+const pagination = computed(() => {
+  return {
+    current: current.value,
+    from: from.value,
+    to: to.value,
+    pages: pages.value,
+    total: total.value,
+    recordsPerPage: recordsPerPage.value,
+  };
+});
+
 const schedules = ref([]);
-const getSchedules = async () => {
+const getSchedules = async (pageNumber) => {
   try {
     const { status, data } = await workplaceRequestsv2(
       "get",
-      "operations/sd/installer/schedules"
+      `operations/sd/installer/schedules?per_page=${recordsPerPage.value}&page=${pageNumber}`
     );
     if (status == 200) {
       schedules.value = data.data.data;
       restructureData.value = Object.entries(schedules.value).map((v, k) => {
         return { label: v[0], values: v[1] };
       });
-      console.log(restructureData.value);
+      total.value = data.data.pagination.total;
+      current.value = data.data.pagination.current;
+      from.value = data.data.pagination.from;
+      to.value = data.data.pagination.to;
+      pages.value = data.data.pagination.pages;
     }
   } catch (e) {
     alert(e.message);

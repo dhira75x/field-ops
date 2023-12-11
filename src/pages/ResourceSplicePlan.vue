@@ -27,4 +27,21 @@ import ButtonOrder from '../components/ButtonOrder.vue'
 import ChevronBack from '../components/ChevronBack.vue'
 import ButtonSubmit from '../components/ButtonSubmit.vue'
 import ResourceSplicePlan from '../components/ResourceSplicePlan.vue'
+
+import { onMounted, ref,  } from "vue";
+import workplaceRequestsv2 from "@/service/workplaceRequestsv2.js";
+import { useRoute } from "vue-router";
+const route=useRoute();
+onMounted(()=>{
+  getReport();
+})
+  const getReport=async ()=>{
+    try{
+      const { status, data } = await workplaceRequestsv2(
+      "get",
+      `operations/sd/spliceplans/${route.params.id}`
+    );
+    if (status == 200) { /* empty */ }
+    }catch(e){ /* empty */ }
+  }
 </script>
