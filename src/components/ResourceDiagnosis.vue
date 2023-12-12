@@ -15,110 +15,109 @@
         </div>
       </nav>
     </div>
-    <div class="grid grid-cols-2 gap-4">
-      <div class="col-span-1">
-        <div class="mb-4 mt-1 p-2 border w-full rounded-md">
-          <!-- <input
-            type="text"
-            id="field1"
-            name="field1"
-            placeholder="Splitter Name"
-            class="mt-1 p-2 border w-full rounded-md"
-          /> -->
+    <!-- <div class=""> -->
+    <div class="w-full">
+      <div class="mb-4 flex flex-row mt-1 p-2 border w-full rounded-md">
+        <div class="w-1/2">
           Splitter Name
         </div>
-
-        <div class="mb-4 mt-1 p-2 border w-full rounded-md">
-          <!-- <input
-            type="text"
-            id="field2"
-            name="field2"
-            placeholder="Customer Address"
-            class="mt-1 p-2 border w-full rounded-md"
-          /> -->
-          Customer Address
-        </div>
-        <div class="mb-4 mt-1 p-2 border w-full rounded-md">
-          <!-- <input
-            type="text"
-            id="field2"
-            name="field2"
-            placeholder="GPS Coordinates"
-            class="mt-1 p-2 border w-full rounded-md"
-          /> -->
-          GPS Coordinates
-        </div>
-        <div class="mb-4 mt-1 p-2 border w-full rounded-md">
-          <!-- <input
-            type="text"
-            id="field2"
-            name="field2"
-            placeholder="Fault Segmentation"
-            class="mt-1 p-2 border w-full rounded-md"
-          /> -->
-          Fault Segmentation
-        </div>
-        <div class="mb-4 mt-1 p-2 border w-full rounded-md">
-          <!-- <input
-            type="text"
-            id="field2"
-            name="field2"
-            placeholder="POF"
-            class="mt-1 p-2 border w-full rounded-md"
-          /> -->
-          POF
-        </div>
-        <div class="mb-4 mt-1 p-2 border w-full rounded-md">
-          <!-- <input
-            type="text"
-            id="field2"
-            name="field2"
-            placeholder="Possible POF"
-            class="mt-1 p-2 border w-full rounded-md"
-          /> -->
-          Possible POF
+        <div class="w-1/2">
+          {{ diagnosis.splitter }} 
         </div>
       </div>
-
-      <div class="col-span-1">
-        <div class="mb-3">
-          <input type="text" id="field3" name="field3" class="mt-1 p-2 border w-full rounded-md" />
+      <div class="mb-4 mt-1 p-2 flex flex-row border w-full rounded-md">
+        <div class="w-1/2">
+          Customer Address
         </div>
-        <div class="mb-3">
-          <input type="text" id="field3" name="field3" class="mt-1 p-2 border w-full rounded-md" />
+        <div class="w-1/2">
+          {{ diagnosis.customer_address }}
         </div>
-        <div class="mb-3">
-          <input type="text" id="field3" name="field3" class="mt-1 p-2 border w-full rounded-md" />
+      </div>
+      <div class="mb-4 mt-1 p-2 flex flex-row border w-full rounded-md">
+        <div class="w-1/2">
+          GPS Coordinates
         </div>
-        <div class="mb-3">
-          <input type="text" id="field3" name="field3" class="mt-1 p-2 border w-full rounded-md" />
+        <div class="w-1/2">
+          {{ diagnosis.latitude }} {{ diagnosis.longitude }}
         </div>
-        <div class="mb-3">
-          <input type="text" id="field3" name="field3" class="mt-1 p-2 border w-full rounded-md" />
+      </div>
+      <div class="mb-4 mt-1 p-2 flex flex-row border w-full rounded-md">
+        <div class="w-1/2">
+          Fault Segmentation
         </div>
-        <div class="mb-3">
-          <input type="text" id="field3" name="field3" class="mt-1 p-2 border w-full rounded-md" />
+        <div class="w-1/2">
+          {{ diagnosis.fault_segmentation }}
+        </div>
+      </div>
+      <div class="mb-4 mt-1 p-2 flex flex-row border w-full rounded-md">
+        <div class="w-1/2">
+          POF
+        </div>
+        <div class="w-1/2">
+          {{ diagnosis.affected_node }}
+        </div>
+      </div>
+      <div class="mb-4 mt-1 p-2 border flex flex-row w-full rounded-md">
+        <div class="w-1/2">
+          Possible POF
+        </div>
+        <div class="w-1/2">
+          {{ diagnosis.affected_node }}
         </div>
       </div>
     </div>
   </div>
+  <!-- </div> -->
 </template>
 
 <script setup>
-import { onMounted, ref,  } from "vue";
+import { onMounted, ref } from "vue";
 import workplaceRequestsv2 from "@/service/workplaceRequestsv2.js";
 import { useRoute } from "vue-router";
-const route=useRoute();
-onMounted(()=>{
+
+const diagnosis = ref({
+  id: 4,
+  customer: "Ashenafi Habetwold",
+  customer_address:
+    "Flat P5 Setraco Estate Lifecamp , \\n Life Camp, \\nAbuja.",
+  fault_type: null,
+  status: "Incomplete",
+  reason: "Inaccurate Diagnosis",
+  comment: "hihihih",
+  affected_node: "Lifecamp",
+  splitter: "LIFECAMP",
+  splitter_port: "Port 20",
+  olt: "GWARINPA",
+  olt_port: "Port 3",
+  latitude: "9.073256",
+  longitude: "7.403876",
+  fault_segmentation: "Access",
+  cause_of_fault: "Dirty Connector",
+  otdr_reading: "0908890",
+  team: null,
+  date: "2022-08-02T14:58:05.000000Z",
+  duration: null,
+  diagnosis: "500m of cable damage",
+});
+const route = useRoute();
+onMounted(() => {
   getReport();
-})
-  const getReport=async ()=>{
-    try{
-      const { status, data } = await workplaceRequestsv2(
+});
+const getReport = async () => {
+  try {
+    const { status, data } = await workplaceRequestsv2(
       "get",
       `network/maintenance/maintencance-diagnosis-reports/${route.params.id}`
     );
-    if (status == 200) { /* empty */ }
-    }catch(e){ /* empty */ }
+    if (status == 200) {
+      /* empty */
+      diagnosis.value = data.data.data;
+    }
+    console.log("diagnosi", data);
+  } catch (e) {
+    /* empty */
+
+    console.log(e);
   }
+};
 </script>

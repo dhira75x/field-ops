@@ -9,7 +9,7 @@
       :key="index"
     >
       <div
-        class="text-base font-semibold font-['Source Sans Pro']"
+        class="mx-5 text-base font-semibold font-['Source Sans Pro']"
         :class="[activeTab == item.id ? 'text-orange-600' : 'text-neutral-600']"
       >
         {{ item.label }}

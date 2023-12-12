@@ -57,12 +57,12 @@ const logout = () => {
         class="absolute top-full right-0 w-40 cursor-pointer rounded border border-gray-300 bg-white capitalize"
       >
     
-          <li
+          <!-- <li
           @click="toProfile()"
             class=" p-3"
             :class="{ 'text-red-600': $route.name === 'myProfile' }">
             <router-link :to="{ name: 'myProfile' }">profile</router-link>
-          </li>
+          </li> -->
           <li
           class="cursor-pointer py-2 px-3 text-primary hover:bg-gray-200"
           @click="logout">

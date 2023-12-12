@@ -15,321 +15,188 @@
         </div>
       </nav>
     </div>
-    <div class="grid grid-cols-2 gap-4">
-      <div class="col-span-1">
-        <div class="mb-4 mt-1 p-2 border w-full rounded-md">
-          <!-- <input
-            type="text"
-            id="field1"
-            name="field1"
-            placeholder="ID"
-            class="mt-1 p-2 border w-full rounded-md"
-          /> -->
+    <div class="">
+      <div class="w-full">
+        <div class="mb-4 mt-1 p-2 border w-full rounded-md flex flex-row">
           ID
+          <div></div>
         </div>
 
-        <div class="mb-4 mt-1 p-2 border w-full rounded-md">
-          <!-- <input
-            type="text"
-            id="field2"
-            name="field2"
-            placeholder="Customer's Name"
-            class="mt-1 p-2 border w-full rounded-md"
-          /> -->
-          Customer's Name:
+        <div class="mb-4 mt-1 p-2 border w-full rounded-md flex flex-row">
+          <div class="w-1/2">
+            Customer's Name:
+          </div>
+          <div class="w-1/2">
+            {{ props.workOrder.cutomer_name }}
+          </div>
         </div>
-        <div class="mb-4 mt-1 p-2 border w-full rounded-md">
-          <!-- <input
-            type="text"
-            id="field2"
-            name="field2"
-            placeholder="Date"
-            class="mt-1 p-2 border w-full rounded-md"
-          /> -->
-          Date:
+        <div class="mb-4 mt-1 p-2 border w-full rounded-md flex flex-row">
+          <div class="w-1/2">
+            Date:
+          </div>
+          <div class="w-1/2">
+            {{ props.workOrder.date }}
+          </div>
         </div>
-        <div class="mb-4 mt-1 p-2 border w-full rounded-md">
-          <!-- <input
-            type="text"
-            id="field2"
-            name="field2"
-            placeholder="Network Segment"
-            class="mt-1 p-2 border w-full rounded-md"
-          /> -->
-          Network Segment
+        <div class="mb-4 mt-1 p-2 border w-full rounded-md flex flex-row">
+          <div class="w-1/2">
+            Network Segment
+          </div>
+          <div class="w-1/2">
+            {{ props.workOrder.network_segment }}
+          </div>
         </div>
-        <div class="mb-4 mt-1 p-2 border w-full rounded-md">
-          <!-- <input
-            type="text"
-            id="field2"
-            name="field2"
-            placeholder="Affected Node"
-            class="mt-1 p-2 border w-full rounded-md"
-          /> -->
-          Affected Node:
+        <div class="mb-4 mt-1 p-2 border w-full rounded-md flex flex-row">
+          <div class="w-1/2">
+            Affected Node:
+          </div>
+          <div class="w-1/2">
+            {{ props.workOrder.affected_nodes }}
+          </div>
         </div>
-        <div class="mb-4 mt-1 p-2 border w-full rounded-md">
-          <!-- <input
-            type="text"
-            id="field2"
-            name="field2"
-            placeholder="Class of fault"
-            class="mt-1 p-2 border w-full rounded-md"
-          /> -->
-          Class of Fault:
+        <div class="mb-4 mt-1 p-2 border w-full rounded-md flex flex-row">
+          <div class="w-1/2">
+            Class of Fault:
+          </div>
+          <div class="w-1/2">
+            {{ props.workOrder.class_of_fault }}
+          </div>
         </div>
-        <div class="mb-4 mt-1 p-2 border w-full rounded-md">
-          <!-- <input
-            type="text"
-            id="field2"
-            name="field2"
-            placeholder="Type of Fault"
-            class="mt-1 p-2 border w-full rounded-md"
-          /> -->
-          Type of Fault:
+        <div class="mb-4 mt-1 p-2 border w-full rounded-md flex flex-row">
+          <div class="w-1/2">
+            Type of Fault:
+          </div>
+          <div class="w-1/2">
+            {{ props.workOrder.type_of_fault }}
+          </div>
         </div>
-        <div class="mb-4 mt-1 p-2 border w-full rounded-md">
-          <!-- <input
-            type="text"
-            id="field2"
-            name="field2"
-            placeholder="DNI Image"
-            class="mt-1 p-2 border w-full rounded-md"
-          /> -->
-          DNI Image:
+        <div class="mb-4 mt-1 p-2 border w-full rounded-md flex flex-row">
+          <div class="w-1/2">
+            DNI Image:
+          </div>
+          <div class="w-1/2">
+            {{ props.workOrder.dni_image }}
+          </div>
         </div>
-        <div class="mb-4 mt-1 p-2 border w-full rounded-md">
-          <!-- <input
-            type="text"
-            id="field2"
-            name="field2"
-            placeholder="Comment"
-            class="mt-1 p-2 border w-full rounded-md"
-          /> -->
-          Comment:
+        <div class="mb-4 mt-1 p-2 border w-full rounded-md flex flex-row">
+          <div class="w-1/2">
+            Comment:
+          </div>
+          <div class="w-1/2">
+            {{ props.workOrder.comment }}
+          </div>
         </div>
-        <div class="mb-4 mt-1 p-2 border w-full rounded-md">
-          <!-- <input
-            type="text"
-            id="field2"
-            name="field2"
-            placeholder="Splitter"
-            class="mt-1 p-2 border w-full rounded-md"
-          /> -->
-          Splitter
+        <div class="mb-4 mt-1 p-2 border w-full rounded-md flex flex-row">
+          <div class="w-1/2">
+            Splitter
+          </div>
+          <div class="w-1/2">
+            {{ props.workOrder.splitter }}
+          </div>
         </div>
-        <div class="mb-4 mt-1 p-2 border w-full rounded-md">
-          <!-- <input
-            type="text"
-            id="field2"
-            name="field2"
-            placeholder="Splitter port"
-            class="mt-1 p-2 border w-full rounded-md"
-          /> -->
-          Splitter Port:
+        <div class="mb-4 mt-1 p-2 border w-full rounded-md flex flex-row">
+          <div class="w-1/2">
+            Splitter Port:
+          </div>
+          <div class="w-1/2">
+            {{ props.workOrder.splitter_port }}
+          </div>
         </div>
-        <div class="mb-4 mt-1 p-2 border w-full rounded-md">
-          <!-- <input
-            type="text"
-            id="field2"
-            name="field2"
-            placeholder="OLT"
-            class="mt-1 p-2 border w-full rounded-md"
-          /> -->
-          OLT
+        <div class="mb-4 mt-1 p-2 border w-full rounded-md flex flex-row">
+          <div class="w-1/2">
+            OLT
+          </div>
+          <div class="w-1/2">
+            {{ props.workOrder.olt }}
+          </div>
         </div>
-        <div class="mb-4 mt-1 p-2 border w-full rounded-md">
-          <!-- <input
-            type="text"
-            id="field2"
-            name="field2"
-            placeholder="OLT port"
-            class="mt-1 p-2 border w-full rounded-md"
-          /> -->
-          OLT Port
+        <div class="mb-4 mt-1 p-2 border w-full rounded-md flex flex-row">
+          <div class="w-1/2">
+            OLT Port
+          </div>
+          <div class="w-1/2">
+            {{ props.workOrder.olt_port }}
+          </div>
         </div>
-        <div class="mb-4 mt-1 p-2 border w-full rounded-md">
-          <!-- <input
-            type="text"
-            id="field2"
-            name="field2"
-            placeholder="Latitude"
-            class="mt-1 p-2 border w-full rounded-md"
-          /> -->
-          Latitude:
+        <div class="mb-4 mt-1 p-2 border w-full rounded-md flex flex-row">
+          <div class="w-1/2">
+            Latitude:
+          </div>
+          <div class="w-1/2">
+            {{ props.workOrder.Latitude }}
+          </div>
         </div>
-        <div class="mb-4 mt-1 p-2 border w-full rounded-md">
-          <!-- <input
-            type="text"
-            id="field2"
-            name="field2"
-            placeholder="Longtitude"
-            class="mt-1 p-2 border w-full rounded-md"
-          /> -->
-          Longitude:
+        <div class="mb-4 mt-1 p-2 border w-full rounded-md flex flex-row">
+          <div class="w-1/2">
+            Longitude:
+          </div>
+          <div class="w-1/2">
+            {{ props.workOrder.Longitude }}
+          </div>
         </div>
-        <div class="mb-4 mt-1 p-2 border w-full rounded-md">
-          <!-- <input
-            type="text"
-            id="field2"
-            name="field2"
-            placeholder="Action required"
-            class="mt-1 p-2 border w-full rounded-md"
-          /> -->
-          Action Required:
+        <div class="mb-4 mt-1 p-2 border w-full rounded-md flex flex-row">
+          <div class="w-1/2">
+            Action Required:
+          </div>
+          <div class="w-1/2">
+            {{ props.workOrder.actions_required }}
+          </div>
         </div>
-        <div class="mb-4 mt-1 p-2 border w-full rounded-md">
-          <!-- <input
-            type="text"
-            id="field2"
-            name="field2"
-            placeholder="Distance affected to meters"
-            class="mt-1 p-2 border w-full rounded-md"
-          /> -->
-          Distance Affected to Meters:
+        <div class="mb-4 mt-1 p-2 border w-full rounded-md flex flex-row">
+          <div class="w-1/2">
+            Distance Affected to Meters:
+          </div>
+          <div class="w-1/2">
+            {{ props.workOrder.distance_affected }}
+          </div>
         </div>
-        <div class="mb-4 mt-1 p-2 border w-full rounded-md">
-          <!-- <input
-            type="text"
-            id="field2"
-            name="field2"
-            placeholder="Number of core to splice"
-            class="mt-1 p-2 border w-full rounded-md"
-          /> -->
-          Number of Core to Splice:
+        <div class="mb-4 mt-1 p-2 border w-full rounded-md flex flex-row">
+          <div class="w-1/2">
+            Number of Core to Splice:
+          </div>
+          <div class="w-1/2">
+            {{ props.workOrder.no_of_core_to_splice}}
+          </div>
         </div>
-        <div class="mb-4 mt-1 p-2 border w-full rounded-md">
-          <!-- <input
-            type="text"
-            id="field2"
-            name="field2"
-            placeholder="Estimated time of resolution"
-            class="mt-1 p-2 border w-full rounded-md"
-          /> -->
-          Estimated Time of Resolution:
+        <div class="mb-4 mt-1 p-2 border w-full rounded-md flex flex-row">
+          <div class="w-1/2">
+            Estimated Time of Resolution:
+          </div>
+          <div class="w-1/2">
+            {{ props.workOrder.etr}}
+          </div>
         </div>
-        <div class="mb-4 mt-1 p-2 border w-full rounded-md">
-          <!-- <input
-            type="text"
-            id="field2"
-            name="field2"
-            placeholder="Produced by"
-            class="mt-1 p-2 border w-full rounded-md"
-          /> -->
-          Produced by:
+        <div class="mb-4 mt-1 p-2 border w-full rounded-md flex flex-row">
+          <div class="w-1/2">
+            Produced by:
+          </div>
+          <div class="w-1/2">
+            {{ props.workOrder.prepared_by }}
+          </div>
         </div>
-        <div class="mb-4 mt-1 p-2 border w-full rounded-md">
-          <!-- <input
-            type="text"
-            id="field2"
-            name="field2"
-            placeholder="Approved to"
-            class="mt-1 p-2 border w-full rounded-md"
-          /> -->
-          Approved to:
+        <div class="mb-4 mt-1 p-2 border w-full rounded-md flex flex-row">
+          <div class="w-1/2">
+            Approved to:
+          </div>
+          <div class="w-1/2">
+            {{ props.workOrder.approved_by }}
+          </div>
         </div>
         <div
           class="mb-4 mt-1 p-2 border w-full font-normal font-['Source Sans Pro'] rounded-md gap-3"
         >
-          <!-- <input
-            type="text"
-            id="field2"
-            name="field2"
-            placeholder="Approved by"
-            class="mt-1 p-2 border w-full rounded-md"
-          /> -->
-          Approved by:
-        </div>
-      </div>
-
-      <div class="col-span-1">
-        <div class="mb-3">
-          <input type="text" id="field3" name="field3" class="mt-1 p-2 border w-full rounded-md" />
-        </div>
-        <div class="mb-3">
-          <div class="relative w-full">
-            <!-- <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
-              <svg
-                class="w-4 h-4 text-gray-500 dark:text-gray-400"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"
-                />
-              </svg>
-            </div> -->
-            <input type="date" class="border p-2 w-full rounded-md" />
-            <!-- <input
-              type="date"
-              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-white-700 dark:border-white-600 dark:placeholder-white-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              placeholder="Select date"
-            /> -->
+          <div class="w-1/2">
+            Assigned To:
           </div>
-        </div>
-        <div class="mb-3">
-          <input type="text" id="field3" name="field3" class="mt-1 p-2 border w-full rounded-md" />
-        </div>
-        <div class="mb-3">
-          <input type="text" id="field3" name="field3" class="mt-1 p-2 border w-full rounded-md" />
-        </div>
-        <div class="mb-3">
-          <input type="text" id="field3" name="field3" class="mt-1 p-2 border w-full rounded-md" />
-        </div>
-        <div class="mb-3">
-          <input type="text" id="field3" name="field3" class="mt-1 p-2 border w-full rounded-md" />
-        </div>
-        <div class="mb-3">
-          <input type="text" id="field3" name="field3" class="mt-1 p-2 border w-full rounded-md" />
-        </div>
-        <div class="mb-3">
-          <input type="text" id="field3" name="field3" class="mt-1 p-2 border w-full rounded-md" />
-        </div>
-        <div class="mb-3">
-          <input type="text" id="field3" name="field3" class="mt-1 p-2 border w-full rounded-md" />
-        </div>
-        <div class="mb-3">
-          <input type="text" id="field3" name="field3" class="mt-1 p-2 border w-full rounded-md" />
-        </div>
-        <div class="mb-3">
-          <input type="text" id="field3" name="field3" class="mt-1 p-2 border w-full rounded-md" />
-        </div>
-        <div class="mb-3">
-          <input type="text" id="field3" name="field3" class="mt-1 p-2 border w-full rounded-md" />
-        </div>
-        <div class="mb-3">
-          <input type="text" id="field3" name="field3" class="mt-1 p-2 border w-full rounded-md" />
-        </div>
-        <div class="mb-3">
-          <input type="text" id="field3" name="field3" class="mt-1 p-2 border w-full rounded-md" />
-        </div>
-        <div class="mb-3">
-          <input type="text" id="field3" name="field3" class="mt-1 p-2 border w-full rounded-md" />
-        </div>
-        <div class="mb-3">
-          <input type="text" id="field3" name="field3" class="mt-1 p-2 border w-full rounded-md" />
-        </div>
-        <div class="mb-3">
-          <input type="text" id="field3" name="field3" class="mt-1 p-2 border w-full rounded-md" />
-        </div>
-        <div class="mb-3">
-          <input type="text" id="field3" name="field3" class="mt-1 p-2 border w-full rounded-md" />
-        </div>
-        <div class="mb-3">
-          <input type="text" id="field3" name="field3" class="mt-1 p-2 border w-full rounded-md" />
-        </div>
-        <div class="mb-3">
-          <input type="text" id="field3" name="field3" class="mt-1 p-2 border w-full rounded-md" />
-        </div>
-        <div class="mb-3">
-          <input type="text" id="field3" name="field3" class="mt-1 p-2 border w-full rounded-md" />
-        </div>
-        <div class="mb-3">
-          <input type="text" id="field3" name="field3" class="mt-1 p-2 border w-full rounded-md" />
+          <div class="w-1/2">
+            {{ props.workOrder.assigned_to }}
+          </div>
         </div>
       </div>
     </div>
   </div>
 </template>
+
+<script setup>
+const props = defineProps(["workOrder"]);
+</script>

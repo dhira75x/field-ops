@@ -12,7 +12,7 @@
           </div>
         </div>
         <div>
-          <DiagnosisButton />
+          <DiagnosisButton :id="route?.params?.id2" />
         </div>
         <div class="my-3 mx-10">
           <ResourceDiagnosis />
@@ -28,4 +28,6 @@ import ChevronBack from '../components/ChevronBack.vue'
 import ButtonSubmit from '../components/ButtonSubmit.vue'
 //import FormFill from '../components/FormFill.vue'
 import ResourceDiagnosis from '../components/ResourceDiagnosis.vue'
+import { useRoute } from 'vue-router'
+const route=useRoute();
 </script>

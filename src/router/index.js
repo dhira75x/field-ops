@@ -108,7 +108,7 @@ const router = createRouter({
       component: ObligationConfirmations
     },
     {
-      path: '/pages/ResourceDiagnosis/:id',
+      path: '/pages/ResourceDiagnosis/:id/:id2',
       name: 'ResourceDiagnosis',
       component: ResourceDiagnosis
     },

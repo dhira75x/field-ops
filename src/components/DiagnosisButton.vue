@@ -6,7 +6,7 @@
       Diagnosis
     </div>
 
-    <router-link :to="{ name: 'ResourceWorkOrder', params: { id: props.id } }">
+    <router-link :to="{ name: 'ResourceWorkOrder', params: { id: route?.params.id2 } }">
       <div
         class="bg-[#f5d3c3] text-black w-[354px] h-[64px] font-semibold text-center cursor-pointer flex place-items-center justify-center rounded-tl-2xl rounded-tr-2xl shadow-inner"
       >
@@ -17,7 +17,8 @@
 </template>
 <script setup>
 import { useRoute } from "vue-router";
-const props = defineProps(["id"]);
 
-const route = useRoute();
+const props = defineProps(["id"]);
+const route=useRoute()
+
 </script>
