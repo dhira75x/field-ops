@@ -303,6 +303,7 @@
               <th scope="col" class="px-3 py-3 w-[200px] h-[19px] mx-10">Action</th>
             </tr>
           </thead>
+<<<<<<< Updated upstream
           <tbody class="my-20 items-center pb-5">
             <td class="px-6 py-4 bg-white-200 text-center">01</td>
             <td class="px-6 py-4 bg-white-200 text-center">Bello Akinyemi</td>
@@ -326,6 +327,30 @@
                 >
                   Add Item
                 </button>
+=======
+          <tbody class="my-20 pb-5">
+            <td class="px-3 py-3 bg-white-200 text-center border border-black">01</td>
+            <td class="px-6 py-4 bg-white-200 text-center border border-black">
+              20 Tijjani Babangiga Road
+            </td>
+            <td class="px-6 py-4 bg-white-200 text-center border border-black">Bello Akinyemi</td>
+            <td class="px-6 py-4 bg-white-200 text-center border border-black">FAT</td>
+            <td class="px-6 py-4 bg-white-200 text-center border border-black">N/A</td>
+            <td class="px-6 py-4 bg-white-200 text-center border border-black">N/A</td>
+            <td class="px-6 py-4 bg-white-200 text-center border border-black"></td>
+            <td class="px-6 py-4 bg-white-200 text-center border border-black"></td>
+            <td class="px-6 py-4 bg-white-200 text-center border border-black"></td>
+            <td class="px-6 py-4 bg-white-200 text-center border border-black"></td>
+            <td class="border border-black">
+              <div class="flex flex-row-reverse gap-4">
+                <router-link to="/pages/ProvideReport">
+                  <button
+                    class="bg-legend-orange pl-2 pr-2 rounded-md border-solid border-[transparent] border w-[145px] h-[41px]"
+                  >
+                    Provide Report
+                  </button>
+                </router-link>
+>>>>>>> Stashed changes
               </div>
             </td>
           </tbody>
