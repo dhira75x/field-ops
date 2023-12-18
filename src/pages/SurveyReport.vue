@@ -8,14 +8,14 @@
             <ChevronBack />
           </div>
           <div>
-            <ButtonSubmit />
+            <ButtonSubmit @submit="(value)=>{submitForm=value}" />
           </div>
         </div>
         <div>
-          <ButtonOrder />
+          <ButtonOrder :id="route.params.id" />
         </div>
         <div class="my-3 mx-10">
-          <SurveyReportForm />
+          <SurveyReportForm :submitForm="submitForm" />
         </div>
       </main>
     </template>
@@ -27,4 +27,8 @@ import ButtonOrder from '../components/ButtonOrder.vue'
 import ChevronBack from '../components/ChevronBack.vue'
 import ButtonSubmit from '../components/ButtonSubmit.vue'
 import SurveyReportForm from '../components/SurveyReportForm.vue'
+import { useRoute } from 'vue-router'
+import { ref } from 'vue'
+const submitForm=ref(false);
+const route=useRoute();
 </script>

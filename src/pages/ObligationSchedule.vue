@@ -35,7 +35,7 @@ import { ref } from "vue";
 import AppHorizontalNavigation from "@/components/AppHorizontalNavigation.vue";
 //import AppVerticalNavigation from '../components/AppVerticalNavigation.vue'
 import ScheduleList1 from "@/components/ScheduleList1.vue";
-import ScheduleList2 from "@/components/ScheduleList2.vue";
+// import ScheduleList2 from "@/components/ScheduleList2.vue";
 import TopBar from "@/components/TopBar.vue";
 import ObligationConfirmationList from "@/components/ObligationConfirmationList.vue";
 const activeTab = ref(1);

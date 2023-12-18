@@ -45,7 +45,9 @@
     </h2>
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
       <div class="mb-4">
-        <label for="dropdown2" class="block text-md font-semibold text-black-800 mb-2"
+        <label
+          for="dropdown2"
+          class="block text-md font-semibold text-black-800 mb-2"
           >Location Type</label
         >
         <select
@@ -67,7 +69,10 @@
             <div
               class="w-11 h-6 bg-gray-200 rounded-full peer dark:bg-gray-700 peer-focus:ring-4 peer-focus:ring-orange-300 dark:peer-focus:ring-orange-800 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-orange-500"
             ></div>
-            <span class="ms-3 text-sm font-semibold text-black-900 dark:text-black-300">Yes</span>
+            <span
+              class="ms-3 text-sm font-semibold text-black-900 dark:text-black-300"
+              >Yes</span
+            >
           </label>
         </div>
         <div>
@@ -80,7 +85,9 @@
         />
       </div>
       <div class="mb-4">
-        <label for="dropdown2" class="block text-md font-semibold text-black-800 mb-2"
+        <label
+          for="dropdown2"
+          class="block text-md font-semibold text-black-800 mb-2"
           >Type of Buildings</label
         >
         <select
@@ -101,7 +108,9 @@
     </h2>
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
       <div class="mb-4">
-        <label for="dropdown2" class="block text-md font-semibold text-black-800 mb-2"
+        <label
+          for="dropdown2"
+          class="block text-md font-semibold text-black-800 mb-2"
           >Node Type</label
         >
         <select
@@ -116,7 +125,9 @@
       </div>
       <div class="mb-4">
         <div>
-          <label for="name" class="font-semibold">Number of Cable and Type</label>
+          <label for="name" class="font-semibold"
+            >Number of Cable and Type</label
+          >
         </div>
         <input
           type="text"
@@ -125,7 +136,9 @@
         />
       </div>
       <div class="mb-4">
-        <label for="dropdown2" class="block text-md font-semibold text-black-800 mb-2"
+        <label
+          for="dropdown2"
+          class="block text-md font-semibold text-black-800 mb-2"
           >Verification Status</label
         >
         <select
@@ -139,7 +152,9 @@
         </select>
       </div>
       <div class="mb-4">
-        <label for="dropdown2" class="block text-md font-semibold text-black-800 mb-2"
+        <label
+          for="dropdown2"
+          class="block text-md font-semibold text-black-800 mb-2"
           >Labelled</label
         >
         <select
@@ -189,10 +204,17 @@
     </div>
     <div class="grid-cols-1 lg:grid-cols-1 my-7 gap-4">
       <div class="mb-4 mx-16">
-        <label for="picture" class="block text-sm font-semibold text-gray-600 mb-2"
+        <label
+          for="picture"
+          class="block text-sm font-semibold text-gray-600 mb-2"
           >Upload Picture</label
         >
-        <input type="file" id="picture" name="picture" class="w-[1012px] p-2 border rounded-md" />
+        <input
+          type="file"
+          id="picture"
+          name="picture"
+          class="w-[1012px] p-2 border rounded-md"
+        />
       </div>
     </div>
 
@@ -204,14 +226,19 @@
     <div class="grid-cols-1 lg:grid-cols-1 gap-4">
       <div class="mb-4">
         <div>
-          <label for="name" class="font-medium font-['Source Sans Pro'] text-[20px]">LAN</label>
+          <label
+            for="name"
+            class="font-medium font-['Source Sans Pro'] text-[20px]"
+            >LAN</label
+          >
 
           <label class="relative inline-flex items-center mx-10 cursor-pointer">
             <input type="checkbox" value="" class="sr-only peer" checked />
             <div
               class="w-11 h-6 bg-gray-200 rounded-full peer dark:bg-gray-700 peer-focus:ring-4 peer-focus:ring-orange-300 dark:peer-focus:ring-orange-800 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-orange-500"
             ></div>
-            <span class="ms-3 text-sm font-light text-black-900 dark:text-black-300"
+            <span
+              class="ms-3 text-sm font-light text-black-900 dark:text-black-300"
               >Available</span
             >
           </label>
@@ -220,7 +247,9 @@
       </div>
       <div class="mb-4">
         <div>
-          <label for="name" class="font-medium font-['Source Sans Pro'] text-[20px]"
+          <label
+            for="name"
+            class="font-medium font-['Source Sans Pro'] text-[20px]"
             >Access Points</label
           >
 
@@ -229,7 +258,8 @@
             <div
               class="w-11 h-6 bg-gray-200 rounded-full peer dark:bg-gray-700 peer-focus:ring-4 peer-focus:ring-orange-300 dark:peer-focus:ring-orange-800 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-orange-500"
             ></div>
-            <span class="ms-3 text-sm font-light text-black-900 dark:text-black-300"
+            <span
+              class="ms-3 text-sm font-light text-black-900 dark:text-black-300"
               >Available</span
             >
           </label>
@@ -238,14 +268,19 @@
       </div>
       <div class="mb-4">
         <div>
-          <label for="name" class="font-medium font-['Source Sans Pro'] text-[20px]">Routers</label>
+          <label
+            for="name"
+            class="font-medium font-['Source Sans Pro'] text-[20px]"
+            >Routers</label
+          >
 
           <label class="relative inline-flex items-center mx-10 cursor-pointer">
             <input type="checkbox" value="" class="sr-only peer" checked />
             <div
               class="w-11 h-6 bg-gray-200 rounded-full peer dark:bg-white-700 peer-focus:ring-4 peer-focus:ring-orange-300 dark:peer-focus:ring-gray-500 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-400 peer-checked:bg-white-500"
             ></div>
-            <span class="ms-3 text-sm font-light text-black-900 dark:text-black-300"
+            <span
+              class="ms-3 text-sm font-light text-black-900 dark:text-black-300"
               >Not Available</span
             >
           </label>
@@ -254,7 +289,9 @@
     </div>
     <div class="grid-cols-1 lg:grid-cols-1 gap-4 my-16">
       <div class="mb-4">
-        <label for="dropdown2" class="block text-sm font-semibold text-black-800 mb-2"
+        <label
+          for="dropdown2"
+          class="block text-sm font-semibold text-black-800 mb-2"
           >Wifi Solution Required</label
         >
         <select
@@ -273,7 +310,11 @@
         BOM
       </h2>
       <div class="mb-4 my-2">
-        <label for="dropdown2" class="block text-sm font-semibold text-black-800 mb-2">BOM</label>
+        <label
+          for="dropdown2"
+          class="block text-sm font-semibold text-black-800 mb-2"
+          >BOM</label
+        >
         <select
           id="dropdown2"
           name="dropdown2"
@@ -301,13 +342,23 @@
       </nav>
       <div>
         <table class="w-full bg-white-300">
-          <thead class="mb-3 h-[35px] w-full bg-gray-300 border border-gray-600 items-center">
+          <thead
+            class="mb-3 h-[35px] w-full bg-gray-300 border border-gray-600 items-center"
+          >
             <tr>
               <th scope="col" class="px-3 py-3 w-[56px] h-[19px]">S/N:</th>
-              <th scope="col" class="px-3 py-3 w-[550px] h-[19px]">Description</th>
-              <th scope="col" class="px-3 py-3 w-[80px] h-[19px] mx-10">Unit</th>
-              <th scope="col" class="px-3 py-3 w-[80px] h-[19px] mx-10">Quantity</th>
-              <th scope="col" class="px-3 py-3 w-[200px] h-[19px] mx-10">Action</th>
+              <th scope="col" class="px-3 py-3 w-[550px] h-[19px]">
+                Description
+              </th>
+              <th scope="col" class="px-3 py-3 w-[80px] h-[19px] mx-10">
+                Unit
+              </th>
+              <th scope="col" class="px-3 py-3 w-[80px] h-[19px] mx-10">
+                Quantity
+              </th>
+              <th scope="col" class="px-3 py-3 w-[200px] h-[19px] mx-10">
+                Action
+              </th>
             </tr>
           </thead>
           <tbody class="my-20 items-center pb-5">
@@ -351,13 +402,23 @@
       </nav>
       <div>
         <table class="w-full bg-white-300">
-          <thead class="mb-3 h-[35px] w-full bg-gray-300 border border-gray-600 items-center">
+          <thead
+            class="mb-3 h-[35px] w-full bg-gray-300 border border-gray-600 items-center"
+          >
             <tr>
               <th scope="col" class="px-3 py-3 w-[56px] h-[19px]">S/N:</th>
-              <th scope="col" class="px-3 py-3 w-[550px] h-[19px]">Description</th>
-              <th scope="col" class="px-3 py-3 w-[80px] h-[19px] mx-10">Unit</th>
-              <th scope="col" class="px-3 py-3 w-[80px] h-[19px] mx-10">Quantity</th>
-              <th scope="col" class="px-3 py-3 w-[200px] h-[19px] mx-10">Action</th>
+              <th scope="col" class="px-3 py-3 w-[550px] h-[19px]">
+                Description
+              </th>
+              <th scope="col" class="px-3 py-3 w-[80px] h-[19px] mx-10">
+                Unit
+              </th>
+              <th scope="col" class="px-3 py-3 w-[80px] h-[19px] mx-10">
+                Quantity
+              </th>
+              <th scope="col" class="px-3 py-3 w-[200px] h-[19px] mx-10">
+                Action
+              </th>
             </tr>
           </thead>
           <tbody class="my-20 items-center pb-5">
@@ -401,13 +462,23 @@
       </nav>
       <div>
         <table class="w-full bg-white-300">
-          <thead class="mb-3 h-[35px] w-full bg-gray-300 border border-gray-600 items-center">
+          <thead
+            class="mb-3 h-[35px] w-full bg-gray-300 border border-gray-600 items-center"
+          >
             <tr>
               <th scope="col" class="px-3 py-3 w-[56px] h-[19px]">S/N:</th>
-              <th scope="col" class="px-3 py-3 w-[550px] h-[19px]">Description</th>
-              <th scope="col" class="px-3 py-3 w-[80px] h-[19px] mx-10">Unit</th>
-              <th scope="col" class="px-3 py-3 w-[80px] h-[19px] mx-10">Quantity</th>
-              <th scope="col" class="px-3 py-3 w-[200px] h-[19px] mx-10">Action</th>
+              <th scope="col" class="px-3 py-3 w-[550px] h-[19px]">
+                Description
+              </th>
+              <th scope="col" class="px-3 py-3 w-[80px] h-[19px] mx-10">
+                Unit
+              </th>
+              <th scope="col" class="px-3 py-3 w-[80px] h-[19px] mx-10">
+                Quantity
+              </th>
+              <th scope="col" class="px-3 py-3 w-[200px] h-[19px] mx-10">
+                Action
+              </th>
             </tr>
           </thead>
           <tbody class="my-20 items-center pb-5">
@@ -451,13 +522,23 @@
       </nav>
       <div>
         <table class="w-full bg-white-300">
-          <thead class="mb-3 h-[35px] w-full bg-gray-300 border border-gray-600 items-center">
+          <thead
+            class="mb-3 h-[35px] w-full bg-gray-300 border border-gray-600 items-center"
+          >
             <tr>
               <th scope="col" class="px-3 py-3 w-[56px] h-[19px]">S/N:</th>
-              <th scope="col" class="px-3 py-3 w-[550px] h-[19px]">Description</th>
-              <th scope="col" class="px-3 py-3 w-[80px] h-[19px] mx-10">Unit</th>
-              <th scope="col" class="px-3 py-3 w-[80px] h-[19px] mx-10">Quantity</th>
-              <th scope="col" class="px-3 py-3 w-[200px] h-[19px] mx-10">Action</th>
+              <th scope="col" class="px-3 py-3 w-[550px] h-[19px]">
+                Description
+              </th>
+              <th scope="col" class="px-3 py-3 w-[80px] h-[19px] mx-10">
+                Unit
+              </th>
+              <th scope="col" class="px-3 py-3 w-[80px] h-[19px] mx-10">
+                Quantity
+              </th>
+              <th scope="col" class="px-3 py-3 w-[200px] h-[19px] mx-10">
+                Action
+              </th>
             </tr>
           </thead>
           <tbody class="my-20 items-center pb-5">
@@ -487,3 +568,64 @@
     </div>
   </div>
 </template>
+
+<script setup>
+import { watch } from "vue";
+import { useRoute } from "vue-router";
+const route = useRoute();
+
+const payload = {
+  assignment_id: "10",
+  latitutude: "9.5",
+  longitude: "9.4",
+  variance_status: "test",
+  labelled: "yes",
+  node_type: "splitter",
+  address: "15 bangui street",
+  node_image: "",
+  bom: "lastmile",
+  wifi_solution: "Big",
+  is_mdu: "yes",
+  no_of_mdu: "10",
+  location_type: "Home",
+  type_of_buildings: "Duplex",
+  lan: "yes",
+  wlan: "yes",
+  access_points: "yes",
+};
+
+const props=defineProps(['submitForm'])
+
+watch(props.submitForm, ()=>{
+
+  if(props.submitForm){
+    alert("Please submit this form already")
+  }
+})
+
+const submitReport = async () => {
+  try {
+    let data = new FormData();
+    data.append("assignment_id", route.params.id);
+    data.append("latitutude", payload.latitutude);
+    data.append("longitude", payload.longitude);
+    data.append("variance_status", payload.variance_status);
+    data.append("labelled", payload.labelled);
+    data.append("node_type", payload.node_type);
+    data.append("address", payload.address);
+    data.append("node_image", payload.node_image);
+    data.append("bom", payload.bom);
+    data.append("wifi_solution", payload.wifi_solution);
+    data.append("is_mdu", payload.is_mdu);
+    data.append("no_of_mdu", payload.no_of_mdu);
+    data.append("location_type", payload.location_type);
+    data.append("type_of_buildings", payload.type_of_buildings);
+    data.append("lan", payload.lan);
+    data.append("wlan", payload.wlan);
+    data.append("access_points", payload.access_points);
+  } catch (e) {
+    alert(e.message)
+    console.log(e);
+  }
+};
+</script>

@@ -62,7 +62,7 @@ const router = createRouter({
     },
 
     {
-      path: '/pages/SurveyReport',
+      path: '/pages/SurveyReport/:id',
       name: 'SurveyReport',
       component: SurveyReport
     },

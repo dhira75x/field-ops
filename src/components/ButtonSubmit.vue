@@ -6,6 +6,7 @@
       Cancel
     </button>
     <button
+    @click="$emit('submit', true)"
       class="bg-legend-orange rounded-md border-solid border-[transparent] border w-[121px] h-[51px] pt-3.5 pr-7 pb-3.5 pl-7"
     >
       Submit

@@ -67,13 +67,6 @@
             <td class="px-6 py-4">{{ it.start_time }}</td>
             <td class="px-6 py-4">{{ it.end_time }}</td>
             <td class="px-6 py-4">{{ it.status }}</td>
-            <td v-if="userStore.$state.user.installer_role == 'installer'">
-              <router-link
-                :to="{ name: 'ResourceDiagnosis', params: { id: it.id } }"
-              >
-                View Resources
-              </router-link>
-            </td>
             <td v-if="userStore.$state.user.installer_role == 'provisioning'">
               <router-link
                 :to="{
@@ -86,6 +79,7 @@
             </td>
             <td>
               <a
+                v-if="userStore.$state.user.installer_role == 'provisioning'"
                 href="#"
                 class="font-semibold text-black-600 text-center dark:text-black-500 hover:underline rounded-md"
                 @click="
@@ -97,7 +91,7 @@
           </tr>
         </tbody>
         <tbody
-          v-if="userStore.$state.user.installer_role == 'installer'"
+          v-if="userStore.$state.user.installer_role == 'installation'"
           class="rounded-[5px]"
           style="
             box-shadow: var(
@@ -129,21 +123,14 @@
             <td class="px-6 py-4">{{ getTime(it.end_date) }}</td>
             <td class="px-6 py-4">{{ it.status }}</td>
             <td>
-              <router-link
-                :to="{ name: 'ResourceDiagnosis', params: { id: it.id } }"
-              >
+              <router-link :to="{ name: 'ResourceRouteWork' }">
                 View Resources
               </router-link>
             </td>
             <td>
-              <a
-                href="#"
-                class="font-semibold text-black-600 text-center dark:text-black-500 hover:underline rounded-md"
-                @click="
-                  showYesFaultConfirmationModal = !showYesFaultConfirmationModal
-                "
-                >Upload Report</a
-              >
+              <router-link :to="{name:'SurveyReport', params: {id: it.id}}">
+                Upload Report
+              </router-link>
             </td>
           </tr>
         </tbody>
@@ -173,6 +160,7 @@
       @@fetchRecords="getSchedules"
       :pagination="pagination"
     />
+    <!-- <SurveyReportForm /> -->
   </div>
 </template>
 <script setup>
@@ -224,7 +212,7 @@ const pagination = computed(() => {
 const schedules = ref([]);
 const getSchedules = async (pageNumber) => {
   try {
-    if (userStore.$state.user.installer_role == "installer") {
+    if (userStore.$state.user.installer_role == "installation") {
       const { status, data } = await workplaceRequestsv2(
         "get",
         `operations/sd/installer/schedules?per_page=${recordsPerPage.value}&page=${pageNumber}`
