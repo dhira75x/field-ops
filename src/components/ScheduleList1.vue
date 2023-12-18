@@ -123,7 +123,7 @@
             <td class="px-6 py-4">{{ getTime(it.end_date) }}</td>
             <td class="px-6 py-4">{{ it.status }}</td>
             <td>
-              <router-link :to="{ name: 'ResourceRouteWork' }">
+              <router-link :to="{ name: 'ResourceRouteWork', params: {id: it.id} }">
                 View Resources
               </router-link>
             </td>

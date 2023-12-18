@@ -12,7 +12,7 @@
           </div>
         </div>
         <div>
-          <ButtonOrder class="mx-24" />
+          <ButtonOrder class="mx-24" :id="route.params.id" />
         </div>
         <div class="my-5 mx-24">
           <ResourceRoute />
@@ -27,4 +27,6 @@ import ButtonSubmit from '../components/ButtonSubmit.vue'
 import ButtonOrder from '../components/ButtonOrder.vue'
 import ChevronBack from '../components/ChevronBack.vue'
 import ResourceRoute from '../components/ResourceRoute.vue'
+import { useRoute } from 'vue-router'
+const route=useRoute();
 </script>

@@ -6,7 +6,9 @@
       >
         Site Information
       </div>
-      <div class="text-black font-normal font-['Source Sans Pro'] my-2 flex flex-row-reverse">
+      <div
+        class="text-black font-normal font-['Source Sans Pro'] my-2 flex flex-row-reverse"
+      >
         Oct 30, 2023 11:35 AM
       </div>
     </div>
@@ -16,20 +18,22 @@
     <div class="grid grid-cols-5 gap-4">
       <div>
         <input
+          v-model="payload.latitutude"
           type="text"
           id="input1"
           name="input1"
-          class="mt-1 p-2 w-[156px] h-[60px] border rounded-md bg-white-100"
+          class="mt-1 p-2 w-[156px] h-[60px] border border-gray-800 rounded-md bg-white-100"
           placeholder="Enter Latitude"
         />
       </div>
 
       <div>
         <input
+          v-model="payload.longitude"
           type="text"
           id="input2"
           name="input2"
-          class="mt-1 p-2 w-[156px] h-[60px] border rounded-md bg-white-100"
+          class="mt-1 p-2 w-[156px] h-[60px] border border-gray-800 rounded-md bg-white-100"
           placeholder="Enter Longitude"
         />
       </div>
@@ -48,9 +52,10 @@
           >Location Type</label
         >
         <select
+          v-model="payload.location_type"
           id="dropdown2"
           name="dropdown2"
-          class="w-[460px] h-[60px] p-2 border bg-white-500 rounded-md"
+          class="w-[460px] h-[60px] p-2 border border-gray-800 bg-white-500 rounded-md"
         >
           <option value="option1">Residence</option>
           <option value="option2">Commercial</option>
@@ -62,7 +67,13 @@
           <label for="name" class="font-semibold">Is it an MDU?</label>
 
           <label class="relative inline-flex items-center mx-5 cursor-pointer">
-            <input type="checkbox" value="" class="sr-only peer" checked />
+            <input
+              @change="setRadioValue('is_mdu')"
+              type="checkbox"
+              id="is_mdu"
+              value="yes"
+              class="sr-only peer"
+            />
             <div
               class="w-11 h-6 bg-gray-200 rounded-full peer dark:bg-gray-700 peer-focus:ring-4 peer-focus:ring-orange-300 dark:peer-focus:ring-orange-800 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-orange-500"
             ></div>
@@ -72,13 +83,15 @@
             >
           </label>
         </div>
-        <div>
+        <div v-if="payload.is_mdu == 'yes'">
           <label for="name" class="font-semi-bold">If Yes, Number of MDU</label>
         </div>
         <input
+          v-if="payload.is_mdu == 'yes'"
           type="text"
-          class="border p-2 w-[120px] h-[60px] rounded-md"
+          class="border border-gray-800 p-2 w-[120px] h-[60px] rounded-md"
           placeholder="insert value"
+          :required="payload.is_mdu ? true : false"
         />
       </div>
       <div class="mb-4">
@@ -88,9 +101,10 @@
           >Type of Buildings</label
         >
         <select
+          v-model="payload.type_of_buildings"
           id="dropdown2"
           name="dropdown2"
-          class="w-[460px] h-[60px] p-2 border bg-white-500 rounded-md"
+          class="w-[460px] h-[60px] p-2 border border-gray-800 bg-white-500 rounded-md"
         >
           <option value="option1">Duplex</option>
           <option value="option2">Bungalow</option>
@@ -111,9 +125,10 @@
           >Node Type</label
         >
         <select
+          v-model="payload.node_type"
           id="dropdown2"
           name="dropdown2"
-          class="w-[460px] h-[60px] p-2 border bg-white-500 rounded-md"
+          class="w-[460px] h-[60px] p-2 border border-gray-800 bg-white-500 rounded-md"
         >
           <option value="option1">Splitter</option>
           <option value="option2">Router</option>
@@ -128,7 +143,7 @@
         </div>
         <input
           type="text"
-          class="border p-2 w-[120px] h-[60px] rounded-md"
+          class="border border-gray-800 p-2 w-[120px] h-[60px] rounded-md"
           placeholder="insert value"
         />
       </div>
@@ -139,9 +154,10 @@
           >Verification Status</label
         >
         <select
+          v-model="payload.variance_status"
           id="dropdown2"
           name="dropdown2"
-          class="w-[460px] h-[60px] p-2 border bg-white-500 rounded-md"
+          class="w-[460px] h-[60px] p-2 border border-gray-800 bg-white-500 rounded-md"
         >
           <option value="option1">Verified</option>
           <option value="option2">Pending</option>
@@ -155,62 +171,79 @@
           >Labelled</label
         >
         <select
+          v-model="payload.labelled"
           id="dropdown2"
           name="dropdown2"
-          class="w-[460px] h-[60px] p-2 border bg-white-500 rounded-md"
+          class="w-[460px] h-[60px] p-2 border border-gray-800 bg-white-500 rounded-md"
         >
           <option value="option1">Yes</option>
           <option value="option2">No</option>
           <option value="option3">Undecided</option>
         </select>
       </div>
-      <h2 class="text-lg font-bold mb-4 my-2">GPS Coordinates:</h2>
-      <div class="grid grid-cols-5 gap-4">
-        <div>
+    </div>
+    <div class="">
+      <div class="w-full">
+        <h2 class="text-lg font-bold mb-4 my-2">GPS Coordinates:</h2>
+      </div>
+      <div class="flex flex-row">
+        <div class="w-1/6">
+          <div>
+            <label for="name" class="font-semibold">Latitude</label>
+          </div>
           <input
+            v-model="payload.latitutude"
             type="text"
             id="input1"
             name="input1"
-            class="mt-1 p-2 w-[156px] h-[60px] border rounded-md bg-white-100"
+            class="mt-1 p-2 w-[156px] h-[60px] border border-gray-800 rounded-md bg-white-100"
             placeholder="Enter Latitude"
           />
         </div>
 
-        <div>
+        <div class="w-1/6">
+          <div>
+            <label for="name" class="font-semibold">Longitude</label>
+          </div>
           <input
+            v-model="payload.longitude"
             type="text"
             id="input2"
             name="input2"
-            class="mt-1 p-2 w-[156px] h-[60px] border rounded-md bg-white-100"
+            class="mt-1 p-2 w-[156px] h-[60px] border border-gray-800 rounded-md bg-white-100"
             placeholder="Enter Longitude"
+          />
+        </div>
+        <div class="mb-4 w-4/6">
+          <div>
+            <label for="name" class="font-semibold">Address</label>
+          </div>
+          <input
+            v-model="payload.address"
+            type="text"
+            class="border border-gray-800 p-2 w-full h-[60px] my-2 rounded-md"
+            placeholder="enter address"
           />
         </div>
       </div>
     </div>
-    <div class="grid grid-cols-1 my-6 gap-4">
-      <div class="mb-4">
-        <div>
-          <label for="name" class="font-semibold">Address</label>
-        </div>
-        <input
-          type="text"
-          class="border p-2 w-[461px] h-[60px] my-2 rounded-md"
-          placeholder="enter address"
-        />
-      </div>
-    </div>
+    <div class="grid grid-cols-1 my-6 gap-4"></div>
     <div class="grid-cols-1 lg:grid-cols-1 my-7 gap-4">
-      <div class="mb-4 mx-16">
+      <div class="mb-4">
         <label
           for="picture"
           class="block text-sm font-semibold text-gray-600 mb-2"
           >Upload Picture</label
         >
         <input
+          @change="
+            filesChange($event.target.files);
+            fileCount = $event.target.files.length;
+          "
           type="file"
           id="picture"
           name="picture"
-          class="w-[1012px] p-2 border rounded-md"
+          class="w-full p-2 border border-gray-800 rounded-md"
         />
       </div>
     </div>
@@ -230,7 +263,13 @@
           >
 
           <label class="relative inline-flex items-center mx-10 cursor-pointer">
-            <input type="checkbox" value="" class="sr-only peer" checked />
+            <input
+              type="checkbox"
+              value="yes"
+              class="sr-only peer"
+              @change="setRadioValue('lan')"
+              id="lan"
+            />
             <div
               class="w-11 h-6 bg-gray-200 rounded-full peer dark:bg-gray-700 peer-focus:ring-4 peer-focus:ring-orange-300 dark:peer-focus:ring-orange-800 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-orange-500"
             ></div>
@@ -251,7 +290,13 @@
           >
 
           <label class="relative inline-flex items-center mx-10 cursor-pointer">
-            <input type="checkbox" value="" class="sr-only peer" checked />
+            <input
+              type="checkbox"
+              value="yes"
+              class="sr-only peer"
+              @change="setRadioValue('access_points')"
+              id="access_points"
+            />
             <div
               class="w-11 h-6 bg-gray-200 rounded-full peer dark:bg-gray-700 peer-focus:ring-4 peer-focus:ring-orange-300 dark:peer-focus:ring-orange-800 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-orange-500"
             ></div>
@@ -272,7 +317,7 @@
           >
 
           <label class="relative inline-flex items-center mx-10 cursor-pointer">
-            <input type="checkbox" value="" class="sr-only peer" checked />
+            <input type="checkbox" value="yes" class="sr-only peer" checked />
             <div
               class="w-11 h-6 bg-gray-200 rounded-full peer dark:bg-white-700 peer-focus:ring-4 peer-focus:ring-orange-300 dark:peer-focus:ring-gray-500 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-400 peer-checked:bg-white-500"
             ></div>
@@ -292,6 +337,7 @@
           >Wifi Solution Required</label
         >
         <select
+          v-model="payload.wifi_solution"
           id="dropdown2"
           name="dropdown2"
           class="w-[460px] h-[60px] p-2 border bg-white-500 rounded-md"
@@ -313,6 +359,7 @@
           >BOM</label
         >
         <select
+          v-model="payload.bom"
           id="dropdown2"
           name="dropdown2"
           class="w-[460px] h-[60px] p-2 border bg-white-500 rounded-md"
@@ -567,61 +614,93 @@
 </template>
 
 <script setup>
-import { watch } from "vue";
+import { watch, ref } from "vue";
 import { useRoute } from "vue-router";
+import workplaceRequestsv2 from "../service/workplaceRequestsv2";
 const route = useRoute();
 
-const payload = {
-  assignment_id: "10",
-  latitutude: "9.5",
-  longitude: "9.4",
-  variance_status: "test",
-  labelled: "yes",
-  node_type: "splitter",
-  address: "15 bangui street",
+const payload = ref({
+  assignment_id: "",
+  latitutude: "",
+  longitude: "",
+  variance_status: "",
+  labelled: "",
+  node_type: "",
+  address: "",
   node_image: "",
-  bom: "lastmile",
-  wifi_solution: "Big",
-  is_mdu: "yes",
-  no_of_mdu: "10",
-  location_type: "Home",
-  type_of_buildings: "Duplex",
-  lan: "yes",
-  wlan: "yes",
-  access_points: "yes",
+  bom: "",
+  wifi_solution: "",
+  is_mdu: "",
+  no_of_mdu: "",
+  location_type: "",
+  type_of_buildings: "",
+  lan: "",
+  wlan: "",
+  access_points: "",
+});
+
+const props = defineProps(["submitForm"]);
+const emit = defineEmits(["formSubmitted"]);
+
+watch(
+  () => props.submitForm,
+  (newValue) => {
+    if (newValue == true) {
+      submitReport();
+    }
+  }
+);
+
+const filesChange = async (value) => {
+  try {
+    payload.value.node_image = value[0];
+    console.log(payload);
+  } catch (e) {
+    alert(e.message);
+  }
 };
 
-const props=defineProps(['submitForm'])
-
-watch(props.submitForm, ()=>{
-
-  if(props.submitForm){
-    alert("Please submit this form already")
+const setRadioValue = (label) => {
+  let input = document.getElementById(label);
+  if (input.checked) {
+    payload.value[label] = "yes";
+  } else {
+    payload.value[label] = "no";
   }
-})
+};
 
 const submitReport = async () => {
   try {
-    let data = new FormData();
-    data.append("assignment_id", route.params.id);
-    data.append("latitutude", payload.latitutude);
-    data.append("longitude", payload.longitude);
-    data.append("variance_status", payload.variance_status);
-    data.append("labelled", payload.labelled);
-    data.append("node_type", payload.node_type);
-    data.append("address", payload.address);
-    data.append("node_image", payload.node_image);
-    data.append("bom", payload.bom);
-    data.append("wifi_solution", payload.wifi_solution);
-    data.append("is_mdu", payload.is_mdu);
-    data.append("no_of_mdu", payload.no_of_mdu);
-    data.append("location_type", payload.location_type);
-    data.append("type_of_buildings", payload.type_of_buildings);
-    data.append("lan", payload.lan);
-    data.append("wlan", payload.wlan);
-    data.append("access_points", payload.access_points);
+    let formData = new FormData();
+    formData.append("assignment_id", route.params.id);
+    formData.append("latitutude", payload.value.latitutude);
+    formData.append("longitude", payload.value.longitude);
+    formData.append("variance_status", payload.value.variance_status);
+    formData.append("labelled", payload.value.labelled);
+    formData.append("node_type", payload.value.node_type);
+    formData.append("address", payload.value.address);
+    formData.append("node_image", payload.value.node_image);
+    formData.append("bom", payload.value.bom);
+    formData.append("wifi_solution", payload.value.wifi_solution);
+    formData.append("is_mdu", payload.value.is_mdu);
+    formData.append("no_of_mdu", payload.value.no_of_mdu);
+    formData.append("location_type", payload.value.location_type);
+    formData.append("type_of_buildings", payload.value.type_of_buildings);
+    formData.append("lan", payload.value.lan);
+    formData.append("wlan", payload.value.wlan);
+    formData.append("access_points", payload.value.access_points);
+    const { status, data } = await workplaceRequestsv2(
+      "post",
+      "operations/sd/survey-report/create",
+      formData
+    );
+    console.log(data);
+    if (status == 200) {
+      alert("successful");
+    }
+    emit("formSubmitted");
   } catch (e) {
-    alert(e.message)
+    alert(e.message);
     console.log(e);
   }
 };

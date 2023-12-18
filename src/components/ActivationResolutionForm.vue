@@ -303,31 +303,6 @@
               <th scope="col" class="px-3 py-3 w-[200px] h-[19px] mx-10">Action</th>
             </tr>
           </thead>
-<<<<<<< Updated upstream
-          <tbody class="my-20 items-center pb-5">
-            <td class="px-6 py-4 bg-white-200 text-center">01</td>
-            <td class="px-6 py-4 bg-white-200 text-center">Bello Akinyemi</td>
-            <td class="px-6 py-4 bg-white-200 text-center">FAT</td>
-            <td class="px-6 py-4 bg-white-200 text-center">20 Tijjani Babangiga Road</td>
-            <td class="px-6 py-4 bg-white-200 text-center">N/A</td>
-            <td class="px-6 py-4 bg-white-200 text-center">N/A</td>
-            <td class="px-6 py-4 bg-white-200 text-center"></td>
-            <td class="px-6 py-4 bg-white-200 text-center"></td>
-            <td class="px-6 py-4 bg-white-200 text-center"></td>
-            <td class="px-6 py-4 bg-white-200 text-center"></td>
-            <td>
-              <div class="flex flex-row-reverse mr-10 gap-4">
-                <button
-                  class="rounded-md border-solid border-suburbanblack border w-[121px] h-[51px] pt-3.5 pr-7 pb-3.5 pl-7 shrink-0"
-                >
-                  Delete
-                </button>
-                <button
-                  class="bg-legend-orange rounded-md border-solid border-[transparent] border w-[125px] h-[51px] pt-3.5 pr-7 pb-3.5 pl-7"
-                >
-                  Add Item
-                </button>
-=======
           <tbody class="my-20 pb-5">
             <td class="px-3 py-3 bg-white-200 text-center border border-black">01</td>
             <td class="px-6 py-4 bg-white-200 text-center border border-black">
@@ -350,7 +325,6 @@
                     Provide Report
                   </button>
                 </router-link>
->>>>>>> Stashed changes
               </div>
             </td>
           </tbody>

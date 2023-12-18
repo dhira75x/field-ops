@@ -73,7 +73,7 @@ const router = createRouter({
     },
 
     {
-      path: '/pages/ResourceRouteWork',
+      path: '/pages/ResourceRouteWork/:id',
       name: 'ResourceRouteWork',
       component: ResourceRouteWork
     },
