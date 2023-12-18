@@ -1,18 +1,15 @@
 <template>
-  <div class="w-full h-[2800px] bg-white p-8 rounded shadow">
-    <nav
-      class="mt-1 p-2 border text-black-300 bg-white-600 font-bold font-[Source Sans Pro] text-[25px] w-full flex flex-row rounded-md"
-    >
-      <div>
-        <h2>Site Information</h2>
-      </div>
-
+  <div class="w-full bg-white p-8 rounded shadow">
+    <div class="bg-white grid grid-cols-2 w-full h-[51px] rounded-sm">
       <div
-        class="text-black text-base font-normal font-['Source Sans Pro'] text-center absolute left-[1598px]"
+        class="justify-start text-[25px] text-black-300 font-bold font-[Source Sans Pro] text-start"
       >
+        Site Information
+      </div>
+      <div class="text-black font-normal font-['Source Sans Pro'] my-2 flex flex-row-reverse">
         Oct 30, 2023 11:35 AM
       </div>
-    </nav>
+    </div>
 
     <h2 class="text-lg font-bold mb-4 my-5">GPS Coordinates:</h2>
 

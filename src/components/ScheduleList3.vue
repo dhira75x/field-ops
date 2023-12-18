@@ -55,18 +55,14 @@
           <td class="px-6 py-4 bg-blue-200">11:30:00</td>
           <td class="px-6 py-4 bg-blue-200">Completed</td>
           <td class="bg-blue-200">
-            <a
-              href="#"
-              class="font-semibold text-black-600 text-center dark:text-black-500 hover:underline rounded-md"
-              >View Resources</a
-            >
+            <router-link to="/pages/ResourceRoute">
+              <a>View Resources</a>
+            </router-link>
           </td>
           <td class="bg-blue-200">
-            <a
-              href="#"
-              class="font-semibold text-black-600 text-center dark:text-black-500 hover:underline rounded-md"
-              >Upload Report</a
-            >
+            <router-link to="/pages/SurveyReport">
+              <a>Upload Report</a>
+            </router-link>
           </td>
         </tr>
         <tr
@@ -91,18 +87,14 @@
           <td class="px-6 py-4 bg-blue-200">11:30:00</td>
           <td class="px-6 py-4 bg-blue-200">Completed</td>
           <td class="bg-blue-200">
-            <a
-              href="#"
-              class="font-semibold text-black-600 text-center dark:text-black-500 hover:underline rounded-md"
-              >View Resources</a
-            >
+            <router-link to="/pages/ResourceRoute">
+              <a>View Resources</a>
+            </router-link>
           </td>
           <td class="bg-blue-200">
-            <a
-              href="#"
-              class="font-semibold text-black-600 text-center dark:text-black-500 hover:underline rounded-md"
-              >Upload Report</a
-            >
+            <router-link to="/pages/SurveyReport">
+              <a>Upload Report</a>
+            </router-link>
           </td>
         </tr>
         <tr
@@ -126,19 +118,15 @@
           <td class="px-6 py-4 bg-blue-200">10:30:00</td>
           <td class="px-6 py-4 bg-blue-200">11:30:00</td>
           <td class="px-6 py-4 bg-blue-200">Completed</td>
-          <td class="bg-blue-200">
-            <a
-              href="#"
-              class="font-semibold text-black-600 text-center dark:text-black-500 hover:underline rounded-md"
-              >View Resources</a
-            >
+         <td class="bg-blue-200">
+            <router-link to="/pages/ResourceRoute">
+              <a>View Resources</a>
+            </router-link>
           </td>
           <td class="bg-blue-200">
-            <a
-              href="#"
-              class="font-semibold text-black-600 text-center dark:text-black-500 hover:underline rounded-md"
-              >Upload Report</a
-            >
+            <router-link to="/pages/SurveyReport">
+              <a>Upload Report</a>
+            </router-link>
           </td>
         </tr>
         <tr
@@ -163,18 +151,14 @@
           <td class="px-6 py-4 bg-green-200">11:30:00</td>
           <td class="px-6 py-4 bg-green-200">Completed</td>
           <td class="bg-green-200">
-            <a
-              href="#"
-              class="font-semibold text-black-600 text-center dark:text-black-500 hover:underline rounded-md"
-              >View Resources</a
-            >
+            <router-link to="/pages/ResourceRoute">
+              <a>View Resources</a>
+            </router-link>
           </td>
           <td class="bg-green-200">
-            <a
-              href="#"
-              class="font-semibold text-black-600 text-center dark:text-black-500 hover:underline rounded-md"
-              >Upload Report</a
-            >
+            <router-link to="/pages/SurveyReport">
+              <a>Upload Report</a>
+            </router-link>
           </td>
         </tr>
         <tr
