@@ -143,7 +143,8 @@ export const useUserStore = defineStore("userStore", {
       "Virtual Infrastructure",
       "Architecture Design Engineer",
       "Partnership and Alliance Officer",
-      'Key Account Executive/DIP- Medium Enterprise'
+      'Key Account Executive/DIP- Medium Enterprise',
+      "Analyst"
     ],
     isAdmin: false,
     customerToken:

@@ -172,7 +172,6 @@ import YesFaultConfirmation from "../pages/YesFaultConfirmation.vue";
 import AssignmentDate7 from "./AssignmentDate7.vue";
 import AppPagination from "@/components/AppPagination.vue";
 import { useUserStore } from "../stores/userStore";
-
 const userStore = useUserStore();
 const showYesFaultConfirmationModal = ref(false);
 const showYesFaultConfirmationActModal = ref(false);
